@@ -50,7 +50,25 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
 
     Route::post('logout', [App\Http\Controllers\Auth\Admin\LoginController::class, 'logout'])->name('admin.logout');
 
-    Route::view('/admin/dashboard','backend.admin_
-    dashboard');
+    Route::view('/admin/dashboard','backend.admin_dashboard');
 
 });
+
+//Doctor routes
+
+Route::middleware('guest:employeer')->prefix('employeer')->group( function () {
+
+    Route::get('login', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'login'])->name('employeer.login');
+    Route::post('login', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'check_user']);
+
+
+});
+
+Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
+
+    Route::post('logout', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'logout'])->name('employeer.logout');
+
+    Route::view('/dashboard','backend.employeer_dashboard');
+
+});
+

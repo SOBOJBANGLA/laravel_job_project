@@ -1,53 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-    <!-- Meta-Information -->
-    <title>Fuzen Admin Panel</title>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
 
-    @include('backend.layouts.css')
-</head>
+        <meta charset="utf-8" />
+        <title>Dashboard | Silva - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc."/>
+        <meta name="author" content="Zoyothemes"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		@include('backend.layouts.css')
+      
+    </head>
 
-<body class="expand-data panel-data">
-    @include('backend.layouts.topbar')
-    <!-- Topbar -->
-    @include('backend.layouts.sidebar')
-    
-    <!-- Side Header -->
+    <!-- body start -->
+    <body data-menu-color="light" data-sidebar="default"
 
-    <div class="option-panel">
-        <span class="panel-btn">
-            <i class="fa ion-android-settings fa-spin"></i>
-        </span>
-        <div class="color-panel">
-            <h4>Text Color</h4>
-            <span class="color1" onclick="setActiveStyleSheet('color1'); return false;">
-                <i></i>
-            </span>
-            <span class="color2" onclick="setActiveStyleSheet('color2'); return false;">
-                <i></i>
-            </span>
-            <span class="color3" onclick="setActiveStyleSheet('color'); return false;">
-                <i></i>
-            </span>
-            <span class="color4" onclick="setActiveStyleSheet('color4'); return false;">
-                <i></i>
-            </span>
-            <span class="color5" onclick="setActiveStyleSheet('color5'); return false;">
-                <i></i>
-            </span>
+        <!-- Begin page -->
+        <div id="app-layout">
+
+
+			@if(Auth()->guard('admin')->check())
+			@include('backend.layouts.topbar')
+			@elseif(Auth()->guard('employeer')->check())
+			@include('backend.layouts.employeer_topbar')
+			@endif
+		   
+		   <!-- /Top Menu Items -->
+		   
+		   <!-- Left Sidebar Menu -->
+		   @if(Auth()->guard('admin')->check())
+		   @include('backend.layouts.sidebar')
+		   @elseif(Auth()->guard('employeer')->check())
+		   @include('backend.layouts.employeer_sidebar')
+		   @endif
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                 <!-- content -->
+				@yield('content')
+                <!-- Footer Start -->
+                @include('backend.layouts.footer')
+                <!-- end Footer -->
+                
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
         </div>
-    </div>
-    <!-- Options Panel -->
-   @yield('content')
-    <!-- Panel Content -->
-    @include('backend.layouts.footer')
-    
-<!-- Js -->
-    @include('backend.layouts.js')
-</body>
+        <!-- END wrapper -->
 
-</html>
+        <!-- Vendor -->
+       
+		@include('backend.layouts.js')
+    </body>
+</html>{{ asset('') }}
