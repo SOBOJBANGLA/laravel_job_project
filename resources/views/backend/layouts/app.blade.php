@@ -9,7 +9,7 @@
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc."/>
         <meta name="author" content="Zoyothemes"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		@include('backend.layouts.css')
+		@yield('css')
       
     </head>
 
@@ -56,6 +56,6 @@
 
         <!-- Vendor -->
        
-		@include('backend.layouts.js')
+		@yield('js')
     </body>
 </html>{{ asset('') }}
