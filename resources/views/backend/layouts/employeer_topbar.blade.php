@@ -8,7 +8,7 @@
                     </button>
                 </li>
                 <li class="d-none d-lg-block">
-                    <h5 class="mb-0">Good Morning, John Smith</h5>
+                    <h5 class="mb-0">Good Morning,{{Auth()->guard()->user()->name}}</h5>
                 </li>
             </ul>
 
@@ -154,9 +154,9 @@
 
                 <li class="dropdown notification-list topbar-dropdown">
                     <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="{{ asset('assets/images/users/user-5.jpg') }}" alt="user-image" class="rounded-circle">
+                        <img src="{{ asset(Auth()->guard()->user()->photo) }}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ms-1">
-                            John Smith <i class="mdi mdi-chevron-down"></i> 
+                            {{Auth()->guard()->user()->name}} <i class="mdi mdi-chevron-down"></i> 
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -166,7 +166,7 @@
                         </div>
 
                         <!-- item-->
-                        <a href="pages-profile.html" class="dropdown-item notify-item">
+                        <a href="{{ route('employeer.profile') }}" class="dropdown-item notify-item">
                             <i class="mdi mdi-account-circle-outline fs-16 align-middle"></i>
                             <span>My Account</span>
                         </a>

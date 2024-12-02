@@ -17,7 +17,8 @@ class Employeer extends Authenticatable
         'name',
         'email',
         'password',
-        
+        'company_id',
+        'location_id'
     ];
 
     protected $hidden = [
@@ -28,4 +29,11 @@ class Employeer extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    public function company(){
+        return $this->belongsTo(Company::class);
+    }
+    public function location(){
+        return $this->belongsTo(Location::class);
+    }
 }

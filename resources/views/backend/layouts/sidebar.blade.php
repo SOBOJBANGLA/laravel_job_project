@@ -50,7 +50,7 @@
                                 <a href="{{route('company.index')}}" class="tp-link">Company List</a>
                             </li>
                             <li>
-                                <a href="auth-register.html" class="tp-link">New Company</a>
+                                <a href="{{route('company.create')}}" class="tp-link">New Company</a>
                             </li>
                           
                         </ul>
@@ -58,70 +58,104 @@
                 </li>
 
                 <li>
-                    <a href="#sidebarError" data-bs-toggle="collapse">
-                        <i data-feather="alert-octagon"></i>
-                        <span> Error Pages </span>
+                    <a href="#sidebarAuth" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span> Category </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarError">
+                    <div class="collapse" id="sidebarAuth">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="error-404.html" class="tp-link">Error 404</a>
+                                <a href="{{route('category.index')}}" class="tp-link">Category List</a>
                             </li>
                             <li>
-                                <a href="error-500.html" class="tp-link">Error 500</a>
+                                <a href="{{route('category.create')}}" class="tp-link">New Category</a>
                             </li>
-                            <li>
-                                <a href="error-503.html" class="tp-link">Error 503</a>
-                            </li>
-                            <li>
-                                <a href="error-429.html" class="tp-link">Error 429</a>
-                            </li>
-                            <li>
-                                <a href="offline-page.html" class="tp-link">Offline Page</a>
-                            </li>
+                          
                         </ul>
                     </div>
                 </li>
 
                 <li>
-                    <a href="#sidebarExpages" data-bs-toggle="collapse">
-                        <i data-feather="file-text"></i>
-                        <span> Utility </span>
+                    <a href="#sidebarAuth" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span> Jobtype </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarExpages">
+                    <div class="collapse" id="sidebarAuth">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="pages-starter.html" class="tp-link">Starter</a>
+                                <a href="{{route('jobtype.index')}}" class="tp-link">Jobtype List</a>
                             </li>
                             <li>
-                                <a href="pages-profile.html" class="tp-link">Profile</a>
+                                <a href="{{route('jobtype.create')}}" class="tp-link">New Jobtype</a>
                             </li>
-                            <li>
-                                <a href="pages-pricing.html" class="tp-link">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="pages-timeline.html" class="tp-link">Timeline</a>
-                            </li>
-                            <li>
-                                <a href="pages-invoice.html" class="tp-link">Invoice</a>
-                            </li>
-                            <li>
-                                <a href="pages-faqs.html" class="tp-link">FAQs</a>
-                            </li>
-                            <li>
-                                <a href="pages-gallery.html" class="tp-link">Gallery</a>
-                            </li>
-                            <li>
-                                <a href="pages-maintenance.html" class="tp-link">Maintenance</a>
-                            </li>
-                            <li>
-                                <a href="pages-coming-soon.html" class="tp-link">Coming Soon</a>
-                            </li>
+                          
                         </ul>
                     </div>
                 </li>
+
+                <li>
+                    <a href="#sidebarAuth" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span> Location </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarAuth">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{route('location.index')}}" class="tp-link">Location List</a>
+                            </li>
+                            <li>
+                                <a href="{{route('location.create')}}" class="tp-link">New Location</a>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#sidebarAuth" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span> Jobs </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarAuth">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{route('job.index')}}" class="tp-link">Jobs List</a>
+                            </li>
+                            <li>
+                                <a href="{{route('job.create')}}" class="tp-link">Post a job</a>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#sidebarAuth" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span> Employer </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarAuth">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{route('employeer.index')}}" class="tp-link">Employer List</a>
+                            </li>
+                            <li>
+                                <a href="{{route('employeer.create')}}" class="tp-link">Add Employer</a>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </li>
+
+
+
+
+              
 
                
 
@@ -132,7 +166,7 @@
         </div>
         <!-- End Sidebar -->
 
-        <div class="clearfix"></div>
+        {{-- <div class="clearfix"></div> --}}
 
     </div>
 </div>

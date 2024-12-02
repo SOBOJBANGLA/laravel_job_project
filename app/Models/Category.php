@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
+class Category extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'name','address'
+        'category_name'
     ];
+
     public function job(){
         return $this->hasMany(Job::class);
-    }
-
-    public function employeer(){
-        return $this->hasMany(Employeer::class);
     }
 }

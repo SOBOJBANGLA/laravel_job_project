@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,20 +21,19 @@
 
     </head>
 
+
     <body class="bg-primary-subtle">
         <!-- Begin page -->
         <div class="account-page">
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0">        
                 <div class="row align-items-center g-0">
-
+                    
                     <div class="col-xl-5">
                         <div class="row">
                             <div class="col-md-8 mx-auto">
-                                <div class="card p-3 mb-0">
+                                <div class="card p-3">
                                     <div class="card-body">
-                                        @if ($errors->has('email'))
-                                        <div class="alert alert-danger" >{{$errors->first('email')}}</div>
-                                        @endif
+
                                         <div class="mb-0 border-0 p-md-5 p-lg-0 p-4">
                                             <div class="mb-4 p-0 text-center">
                                                 <a href="index.html" class="auth-logo">
@@ -42,7 +42,7 @@
                                             </div>
 
                                             <div class="auth-title-section mb-3 text-center"> 
-                                                <h3 class="text-dark fs-20 fw-medium mb-2">Welcome Employeer Login</h3>
+                                                <h3 class="text-dark fs-20 fw-medium mb-2">Welcome back</h3>
                                                 <p class="text-dark text-capitalize fs-14 mb-0">Sign in to continue to silve.</p>
                                             </div>
 
@@ -68,55 +68,66 @@
                                             </div>
                                             
                                             <div class="saprator my-4"><span>or continue with email</span></div>
-
+            
                                             <div class="pt-0">
-												<form method="POST" action="{{ route('employeer.login') }}">
+                                                <form method="POST" action="{{ route('employeer.register') }}">
                                                     @csrf
                                                     <div class="form-group mb-3">
+                                                        <label for="username" class="form-label">Username</label>
+                                                        <input class="form-control" value="{{ old('name') }}" name="name" type="text" id="username" required="" placeholder="Enter your Username">
+                                                        @error('name') <span class="text-danger">{{ $message }}</span> @enderror
+                                                    </div>
+        
+                                                    <div class="form-group mb-3">
                                                         <label for="emailaddress" class="form-label">Email address</label>
-                                                        <input class="form-control" name="email" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                                        <input class="form-control" type="email" name="email" value="{{ old('email') }}" id="emailaddress"   required="" placeholder="Enter your email">
+                                                        @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                                                     </div>
                         
                                                     <div class="form-group mb-3">
                                                         <label for="password" class="form-label">Password</label>
-                                                        <input class="form-control" name="password" type="password" required="" id="password" placeholder="Enter your password">
+                                                        <input class="form-control" type="password" name="password" required="" id="password" placeholder="Enter your password">
+                                                        @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+                                                    </div>
+
+                                                    
+                                                    <div class="form-group mb-3">
+                                                        <label for="password" class="form-label">Confirm Password</label>
+                                                        <input class="form-control" type="password" name="password_confirmation" required="" id="password" placeholder="Enter your password">
+                                                        @error('password_confirmation') <span class="text-danger">{{ $message }}</span> @enderror
                                                     </div>
                         
                                                     <div class="form-group d-flex mb-3">
-                                                        <div class="col-sm-6">
+                                                        <div class="col-12">
                                                             <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                                                <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                                                <input type="checkbox" class="form-check-input" id="checkbox-signin">
+                                                                <label class="form-check-label" for="checkbox-signin">I agree to the <a href="#" class="text-primary fw-medium"> Terms and Conditions</a></label>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-sm-6 text-end">
-                                                            <a class='text-muted fs-14' href='auth-recoverpw.html'>Forgot password?</a>                             
-                                                        </div>
+                                                        </div><!--end col-->
                                                     </div>
                                                     
                                                     <div class="form-group mb-0 row">
                                                         <div class="col-12">
                                                             <div class="d-grid">
-                                                                <button class="btn btn-primary" type="submit"> Log In </button>
+                                                                <button class="btn btn-primary" type="submit"> Register</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </form>
-            
+
                                                 <div class="text-center text-muted mb-4">
-                                                    <p class="mb-0">Don't have an account ?<a class='text-primary ms-2 fw-medium' href="{{ route('employeer.register') }}">Sign up</a></p>
+                                                    <p class="mb-0">Already have an account ?<a class='text-primary ms-2 fw-medium' href="{{ route('employeer.login') }}">Login here</a></p>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-xl-7">
                         <div class="account-page-bg p-md-5 p-4">
                             <div class="text-center">
@@ -130,7 +141,6 @@
                 </div>
             </div>
         </div>
-        
         <!-- END wrapper -->
 
         <!-- Vendor -->

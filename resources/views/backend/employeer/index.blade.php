@@ -82,8 +82,12 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Company Name</th>
-                            <th>Address</th>
+                            <th>Photo</th>
+                            <th>Employer Name</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                            <th>Email</th>
+                            
                             <th style="width: 280px;">Action</th>
                             
                         </tr>
@@ -92,14 +96,19 @@
                         @foreach ($items as $item)
 													<tr>
 														<td>{{$loop->iteration}}</td>
-														<td>{{$item->name}}</td>
-														<td>{{$item->address}}</td>
+														<td><img src="{{asset($item->photo)}}" alt="" width="100"></td>
+                                                        <td>{{$item->name}}</td>
+														<td>{{$item->company->name}}</td>
+                                                        <td>{{$item->location->location_name}}</td>
+                                                        <td>{{$item->email}}</td>
+                                                        
 														<td>
                                                             
-                                                            <form action="{{route('company.destroy',$item->id)}}" method="post">
+                                                            <form action="{{route('employeer.destroy',$item->id)}}" method="post">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <a href="{{route('company.edit',$item->id)}}" class="btn btn-info">Edit</a>
+                                                            <a href="{{route('employeer.show',$item->id)}}" class="btn btn-success">View</a>
+                                                            <a href="{{route('employeer.edit',$item->id)}}" class="btn btn-info">Edit</a>
                                                             <button class="btn btn-danger" type="submit" name="submit">Delete</button>
                                                             </form>
                                                             </td>

@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('employeers', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
+            $table->foreignId('company_id');
             $table->string('email',50)->unique();
             $table->string('password');
             $table->string('photo');
+            $table->foreignId('location_id');
+            $table->text('description')->nullable();
             $table->rememberToken();
             $table->enum('status',['active','inactive']);
             $table->timestamps();

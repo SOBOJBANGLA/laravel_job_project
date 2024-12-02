@@ -1,6 +1,12 @@
 <?php
 
+
+use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CompanyController;
+use App\Http\Controllers\backend\EmployeerController;
+use App\Http\Controllers\backend\JobController;
+use App\Http\Controllers\backend\JobtypeController;
+use App\Http\Controllers\backend\LocationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +59,11 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
 
     Route::view('/admin/dashboard','backend.admin_dashboard');
     Route::resource('/company',CompanyController::class);
+    Route::resource('/category',CategoryController::class);
+    Route::resource('/jobtype',JobtypeController::class);
+    Route::resource('/location',LocationController::class);
+    Route::resource('/job',JobController::class);
+    Route::resource('/employeer',EmployeerController::class);
 
 });
 
@@ -63,13 +74,17 @@ Route::middleware('guest:employeer')->prefix('employeer')->group( function () {
     Route::get('login', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'login'])->name('employeer.login');
     Route::post('login', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'check_user']);
 
+    Route::get('register', [App\Http\Controllers\Auth\Employeer\RegisterController::class, 'create'])->name('employeer.register');
+    Route::post('register', [App\Http\Controllers\Auth\Employeer\RegisterController::class, 'store']);
+
+    
 
 });
 
 Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
-
+    Route::get('/profile', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofile'])->name('employeer.profile');
     Route::post('logout', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'logout'])->name('employeer.logout');
-
+    Route::resource('/employeer',EmployeerController::class);
     Route::view('/dashboard','backend.employeer_dashboard');
 
 });

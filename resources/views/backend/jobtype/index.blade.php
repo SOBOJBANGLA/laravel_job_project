@@ -74,7 +74,7 @@
 <p>{{ session('msg') }}</p>
 </div>
 @endif
-                <h5 class="card-title mb-0">Company List</h5>
+                <h5 class="card-title mb-0">JobType List</h5>
             </div><!-- end card header -->
 
             <div class="card-body">
@@ -82,8 +82,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Company Name</th>
-                            <th>Address</th>
+                            <th>JobType Name</th>
+                            
                             <th style="width: 280px;">Action</th>
                             
                         </tr>
@@ -92,14 +92,14 @@
                         @foreach ($items as $item)
 													<tr>
 														<td>{{$loop->iteration}}</td>
-														<td>{{$item->name}}</td>
-														<td>{{$item->address}}</td>
+														<td>{{$item->jobtype_name}}</td>
+														
 														<td>
                                                             
-                                                            <form action="{{route('company.destroy',$item->id)}}" method="post">
+                                                            <form action="{{route('jobtype.destroy',$item->id)}}" method="post">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <a href="{{route('company.edit',$item->id)}}" class="btn btn-info">Edit</a>
+                                                            <a href="{{route('jobtype.edit',$item->id)}}" class="btn btn-info">Edit</a>
                                                             <button class="btn btn-danger" type="submit" name="submit">Delete</button>
                                                             </form>
                                                             </td>
