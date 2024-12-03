@@ -86,7 +86,7 @@ Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
     Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofilestore'])->name('employeer.profile.store');
 
     Route::post('logout', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'logout'])->name('employeer.logout');
- 
+    
     Route::view('/dashboard','backend.employeer_dashboard');
 
 });
