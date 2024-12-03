@@ -69,11 +69,13 @@
         <div class="card">
             <div class="card-header">
                 <div class="pull-left">
-                    @if (session('msg'))
-<div class="alert alert-success">
-<p>{{ session('msg') }}</p>
-</div>
-@endif
+                    @if(session('msg'))
+                    <div class="alert alert-success">{{session('msg')}}</div>
+                    @elseif(session('dlt'))
+                    <div class="alert alert-danger">{{session('dlt')}}</div>
+                    @elseif(session('upt'))
+                    <div class="alert alert-info">{{session('upt')}}</div>
+                    @endif
                 <h5 class="card-title mb-0">Company List</h5>
             </div><!-- end card header -->
 

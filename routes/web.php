@@ -83,8 +83,10 @@ Route::middleware('guest:employeer')->prefix('employeer')->group( function () {
 
 Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
     Route::get('/profile', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofile'])->name('employeer.profile');
+    Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofilestore'])->name('employeer.profile.store');
+
     Route::post('logout', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'logout'])->name('employeer.logout');
-    Route::resource('/employeer',EmployeerController::class);
+ 
     Route::view('/dashboard','backend.employeer_dashboard');
 
 });

@@ -167,76 +167,7 @@
                             
                           <!-- end Experience -->
 
-                            <div class="tab-pane pt-4" id="profile_education" role="tabpanel">
-                                <div class="row">
-
-                                    <div class="col-md-12 col-sm-12 col-lg-6">
-                                        <h5 class="fs-16 text-dark fw-semibold mb-3 text-capitalize">My Education</h5>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-12 col-md-4">
-                                            <ol class="profile-section list-unstyled mb-0 px-4">
-                                                <li class="profile-item">
-                                                    <div class="avatar-sm profile-icon p-1">
-                                                        <div class="avatar-title rounded-2 bg-light" style="height: 40px; width: 40px;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512"><mask id="circleFlagsHausa0"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#circleFlagsHausa0)"><path fill="#eee" d="M0 0h512v512H0z"/><path fill="#6da544" d="m218 154l38-84l38 84l-140 140l-84-38l84-38l140 140l-38 84l-38-84l140-140l84 38l-84 38z"/><path fill="#333" d="M244.5 29.5c0 40.5-11.2 78.5-30.7 110.8l-49-49a45.1 45.1 0 0 0-63.7 0l-9.9 9.8a45.1 45.1 0 0 0 0 63.7l49.1 49a214.2 214.2 0 0 1-110.8 30.7v23c40.5 0 78.5 11.2 110.8 30.7l-49 49a45.1 45.1 0 0 0 0 63.7l9.8 9.9a45.1 45.1 0 0 0 63.7 0l49-49.1a214.2 214.2 0 0 1 30.7 110.8h23c0-40.5 11.2-78.5 30.7-110.8l49 49a45.1 45.1 0 0 0 63.7 0l9.9-9.8a45.1 45.1 0 0 0 0-63.7l-49.1-49a214.2 214.2 0 0 1 110.8-30.7v-23c-40.5 0-78.5-11.2-110.8-30.7l49-49a45.1 45.1 0 0 0 0-63.7l-9.8-9.9a45.1 45.1 0 0 0-63.7 0l-49 49.1a214.2 214.2 0 0 1-30.7-110.8zM256 92.2a233.8 233.8 0 0 0 27.7 62.6L256 182.5l-27.7-27.7A233.8 233.8 0 0 0 256 92.2M133 98a25 25 0 0 1 17.6 7.4l52 51.8a215.9 215.9 0 0 1-45.4 45.3l-51.8-51.9a24.7 24.7 0 0 1 0-35.3l9.9-10A25 25 0 0 1 133 98m246 0c6.4 0 12.8 2.4 17.7 7.4l10 9.9a24.7 24.7 0 0 1 0 35.3l-52 52a215.9 215.9 0 0 1-45.2-45.3l51.9-52A25 25 0 0 1 379 98m-162.3 73.5l25.2 25.1l-45.3 45.3l-25.2-25.2a236.7 236.7 0 0 0 45.3-45.3zm78.6 0a236.7 236.7 0 0 0 45.2 45.2l-25.1 25.2l-45.3-45.3zM256 210.6l45.3 45.3l-45.3 45.3l-45.3-45.3zm-101.2 17.6l27.7 27.7l-27.7 27.7A233.8 233.8 0 0 0 92.2 256a233.8 233.8 0 0 0 62.6-27.7zm202.4 0a233.8 233.8 0 0 0 62.6 27.7a233.8 233.8 0 0 0-62.6 27.7L329.5 256l27.7-27.7zM196.6 270l45.3 45.3l-25.2 25.1a236.7 236.7 0 0 0-45.3-45.2zm118.8 0l25.1 25.2a236.7 236.7 0 0 0-45.2 45.3l-25.2-25.2zm-158.1 39.4a215.9 215.9 0 0 1 45.2 45.3l-51.9 51.8a24.7 24.7 0 0 1-35.3 0l-10-9.9a24.7 24.7 0 0 1 0-35.3zm197.4 0l52 51.9a24.7 24.7 0 0 1 0 35.3l-10 10a24.7 24.7 0 0 1-35.3 0l-52-52a215.9 215.9 0 0 1 45.4-45.2zm-98.7 20l27.7 27.7a233.8 233.8 0 0 0-27.7 62.6a233.8 233.8 0 0 0-27.7-62.6z"/></g></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="exper-item-list">
-                                                        <h5 class="fs-18 text-dark">Middles Earth Technic University</h5>
-                                                        <p class="mb-2 fw-semibold text-dark">Master Degree In Computer Science and Mathematies</p>
-                                                        <div class="list-inline list-inline-dots mb-2 fs-14">
-                                                            <div class="list-inline-item">January 2018</div>
-                                                            <div class="list-inline-item list-inline-item-second">Istanbul, Turkey</div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ol>
-                                        </div>
-
-                                        <div class="col-12 col-md-4">
-                                            <ol class="profile-section list-unstyled mb-0 px-4">
-                                                <li class="profile-item">
-                                                    <div class="avatar-sm profile-icon p-1">
-                                                        <div class="avatar-title rounded-2 bg-light" style="height: 40px; width: 40px;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512"><mask id="circleFlagsCheckered0"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#circleFlagsCheckered0)"><path fill="#eee" d="M0 0h512v512H0z"/><path fill="#333" d="M384 0h128v128H0v128h512v128H0v128h128V0h128v512h128z"/></g></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="exper-item-list">
-                                                        <h5 class="fs-16 text-dark">Bogazicied Technic University</h5>
-                                                        <p class="mb-2 fw-semibold text-dark">Bachelor Degree In Computer Science and Mathematies</p>
-                                                        <div class="list-inline list-inline-dots mb-2 fs-14">
-                                                            <div class="list-inline-item">June 2016</div>
-                                                            <div class="list-inline-item list-inline-item-second">Istanbul, Turkey</div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ol>
-                                        </div>
-
-                                        <div class="col-12 col-md-4">
-                                            <ol class="profile-section list-unstyled mb-0 px-4">
-                                                <li class="profile-item">
-                                                    <div class="avatar-sm profile-icon p-1">
-                                                        <div class="avatar-title rounded-2 bg-light" style="height: 40px; width: 40px;">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512"><mask id="circleFlagsUnitedNations0"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#circleFlagsUnitedNations0)"><path fill="#338af3" d="M0 0h512v512H0z"/><circle cx="256" cy="256" r="145" fill="#eee"/><circle cx="256" cy="256" r="111" fill="#338af3"/><path fill="#338af3" d="M76 76h360L256 256z"/><circle cx="256" cy="256" r="89" fill="#eee"/><circle cx="256" cy="256" r="69" fill="#338af3"/><path fill="#eee" d="M246 178h20v156h-20z"/><path fill="#eee" d="M334 246v20H178v-20z"/><path fill="#eee" d="m304 193.7l14.2 14.2l-110.3 110.3l-14.2-14.1z"/><path fill="#eee" d="m318.2 304l-14.1 14.2l-110.4-110.3l14.2-14.2z"/><circle cx="256" cy="256" r="44" fill="#eee"/><circle cx="256" cy="256" r="22" fill="#338af3"/><ellipse cx="256" cy="412" fill="#eee" rx="44" ry="40"/><path fill="#338af3" d="m256 407l-78 63h156z"/></g></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="exper-item-list">
-                                                        <h5 class="fs-16 text-dark">Ascham School</h5>
-                                                        <p class="mb-2 fw-semibold text-dark">School Regular</p>
-                                                        <div class="list-inline list-inline-dots mb-2 fs-14">
-                                                            <div class="list-inline-item">February 2015</div>
-                                                            <div class="list-inline-item list-inline-item-second">Istanbul, Turkey</div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- end education -->
+                            <!-- end education -->
 
                             <div class="tab-pane pt-4" id="profile_setting" role="tabpanel">
                                 <div class="row">
@@ -254,60 +185,66 @@
                                                 </div>
 
                                                 <div class="card-body">
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">First Name</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="text" value="Charles">
+                                                    <form method="post" action="{{route('employeer.profile.store')}}" enctype="multipart/form-data">
+                                                        @csrf
+                                                       
+                                                        <div class="mb-3">
+                                                            <label for="exampleInputEmail1" class="form-label">Employeer Name</label>
+                                                            <input type="text"name="name" value="{{$items->name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
                                                         </div>
-                                                    </div>
+                                    
+                                                        {{-- <div class="mb-3">
+                                                            <label for="exampleInputEmail1" class="form-label">Company Name</label>
+                                                            <input type="text" name="company" value="{{$items->company->name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleInputEmail1" class="form-label">Location</label>
+                                                            <input type="text"name="location" value="{{$items->location->location_name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
+                                                        </div> --}}
 
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">Last Name</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="text" value="Buncle">
+                                                        <div class="mb-3">
+                                                            <label for="simpleinput" class="form-label">Company</label>
+                                                            <select id="simpleinput" name="company" class="form-select" aria-label="Default select example">
+                                                                <option selected>Select Company</option>
+                                                                @foreach($companies as $company) 
+                                                                <option value="{{ $company->id }}"> {{ $company->name }} </option> 
+                                                                @endforeach
+                                                            </select>
                                                         </div>
-                                                    </div>
+                                    
+                                                        <div class="mb-3">
+                                                            <label for="simpleinput" class="form-label">Company Location</label>
+                                                            <select id="simpleinput" name="location" class="form-select" aria-label="Default select example">
+                                                                <option selected>Select location </option>
+                                                                @foreach($locations as $location)	
+                                                                <option value="{{ $location->id}}">{{$location->location_name}}</option>
+                                                                                                            
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                    
+                                    
+                                                        <div class="form-group mb-3">
+                                                            <label for="emailaddress" class="form-label">Email address</label>
+                                                            <input class="form-control" type="email" name="email" value="{{$items->email}}+" id="emailaddress"   required="" placeholder="Enter your email">
+                                                            @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                                                        </div>
+                                    
+                                                        
+                                                        <div class="mb-3">
+                                                            <label for="formFile" class="form-label">Image</label>
+                                                            <input class="form-control" type="file" name="photo" id="formFile">
+                                                            <img src="{{ asset($items->photo) }}" width="100px">
+                                                        </div>
+                                    
+                                    
+                                                        <div class="mb-3">
+                                                            <label for="exampleInputPassword1" class="form-label">About</label>
+                                                            <textarea type="text" name="description"  class="form-control" id="exampleInputEmail1" placeholder="Description" rows="10">{{Auth()->guard()->user()->description}}</textarea>
+                                                        </div>
 
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">Contact Phone</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <div class="input-group">
-                                                                <span class="input-group-text"><i class="mdi mdi-phone-outline"></i></span>
-                                                                <input class="form-control" type="text" placeholder="Phone" aria-describedby="basic-addon1" value="+61 399615">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">Email Address</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <div class="input-group">
-                                                                <span class="input-group-text"><i class="mdi mdi-email"></i></span>
-                                                                <input type="text" class="form-control" value="CharlesBuncle@dayrep.com" placeholder="Email" aria-describedby="basic-addon1">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">Company</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="text" value="zoyothemes">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">City</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="text" value="Adelaide">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">Address</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="text" value="Australia">
-                                                        </div>
-                                                    </div>
+                                                        <button type="submit" class="btn btn-primary">Edit</button>
+                                                    </form>
 
                                                 </div><!--end card-body-->
                                             </div>

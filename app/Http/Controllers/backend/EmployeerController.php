@@ -123,7 +123,7 @@ class EmployeerController extends Controller
         $employeer->status=$request->status;
         $employeer->update();
         //return redirect('admin/specialist');
-        return redirect()->route('employeer.index')->with('msg',"Successfully created");
+        return redirect()->route('employeer.index')->with('upt',"Successfully updated");
     }
 
     /**
@@ -132,6 +132,6 @@ class EmployeerController extends Controller
     public function destroy(Employeer $employeer)
     {
         $employeer->delete();
-        return redirect()->route('employeer.index')->with('msg',"Successfully delete");
+        return redirect()->route('employeer.index')->with('dlt',"Successfully delete");
     }
 }

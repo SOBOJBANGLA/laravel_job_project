@@ -97,6 +97,26 @@
                                                         @error('password_confirmation') <span class="text-danger">{{ $message }}</span> @enderror
                                                     </div>
                         
+                                                    <div class="mb-3">
+                                                        <label for="simpleinput" class="form-label">Company</label>
+                                                        <select id="simpleinput" name="company" class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Company</option>
+                                                            @foreach($companies as $company)	
+                                                            <option value="{{$company->id}}" @selected(old('company')==$company->id) >{{$company->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                
+                                                    <div class="mb-3">
+                                                        <label for="simpleinput" class="form-label">Company Location</label>
+                                                        <select id="simpleinput" name="location" class="form-select" aria-label="Default select example">
+                                                            <option selected>Select location </option>
+                                                            @foreach($locations as $location)	
+                                                            <option value="{{$location->id}}" @selected(old('location')==$location->id) >{{$location->location_name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    
                                                     <div class="form-group d-flex mb-3">
                                                         <div class="col-12">
                                                             <div class="form-check">

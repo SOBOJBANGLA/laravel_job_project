@@ -41,6 +41,9 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Job Title</label>
                         <input type="text"name="title" value="{{old('title')}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
+                        @error('title')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -51,6 +54,9 @@
                             <option value="{{$company->id}}" @selected(old('company')==$company->id) >{{$company->name}}</option>
                             @endforeach
                         </select>
+                        @error('company')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -61,6 +67,9 @@
 							<option value="{{$location->id}}" @selected(old('location')==$location->id) >{{$location->location_name}}</option>
 							@endforeach
                         </select>
+                        @error('location')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -71,6 +80,9 @@
                             <option value="{{$category->id}}" @selected(old('category')==$category->id) >{{$category->category_name}}</option>
                             @endforeach
                         </select>
+                        @error('category')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -81,11 +93,17 @@
                             <option value="{{$jobtype->id}}" @selected(old('jobtype')==$jobtype->id) >{{$jobtype->jobtype_name}}</option>
                             @endforeach
                         </select>
+                        @error('jobtype')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Vacancy</label>
                         <input type="text" name="vacancy" value="{{old('vacancy')}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Vacancy">
+                        @error('vacancy')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -123,6 +141,9 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Experience</label>
                         <input type="text" name="experience" value="{{old('experience')}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Experience">
+                        @error('experience')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -133,6 +154,9 @@
                     <div class="mb-3">
                         <label for="example-date" class="form-label">Job end date</label>
                         <input type="date" id="example-date" value="{{old('job_end_date')}}" class="form-control" name="job_end_date">
+                        @error('job_end_date')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Submit</button>

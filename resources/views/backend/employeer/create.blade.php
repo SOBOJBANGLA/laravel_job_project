@@ -32,7 +32,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h5 class="card-title mb-0">Create Company</h5>
+                <h5 class="card-title mb-0">New Employer</h5>
             </div><!-- end card header -->
 
             <div class="card-body">
@@ -41,6 +41,9 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Employeer Name</label>
                         <input type="text"name="name" value="{{old('name')}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Employeer Name">
+                        @error('name')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -51,6 +54,9 @@
                             <option value="{{$company->id}}" @selected(old('company')==$company->id) >{{$company->name}}</option>
                             @endforeach
                         </select>
+                        @error('company')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
@@ -61,35 +67,44 @@
 							<option value="{{$location->id}}" @selected(old('location')==$location->id) >{{$location->location_name}}</option>
 							@endforeach
                         </select>
+                        @error('location')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="form-group mb-3">
                         <label for="emailaddress" class="form-label">Email address</label>
                         <input class="form-control" type="email" name="email" value="{{ old('email') }}" id="emailaddress"   required="" placeholder="Enter your email">
-                        @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                        @error('email') <div class="text text-danger">{{ $message }}</div> @enderror
+                        
                     </div>
 
                     <div class="form-group mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input class="form-control" type="password" name="password" required="" id="password" placeholder="Enter your password">
-                        @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+                        @error('password') <div class="text text-danger">{{ $message }}</div> @enderror
+                    
                     </div>
 
                     
                     <div class="form-group mb-3">
                         <label for="password" class="form-label">Confirm Password</label>
                         <input class="form-control" type="password" name="password_confirmation" required="" id="password" placeholder="Enter your password">
-                        @error('password_confirmation') <span class="text-danger">{{ $message }}</span> @enderror
+                        @error('password_confirmation') <div class="text text-danger">{{ $message }}</div> @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Image</label>
                         <input class="form-control" type="file" name="photo" id="formFile">
+                        @error('photo')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">About</label>
                         <textarea type="text" name="description" value="{{old('description')}}" class="form-control" id="exampleInputEmail1" placeholder="About Employer" rows="10"></textarea>
+                        
                     </div>
 
                     

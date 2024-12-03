@@ -7,7 +7,9 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\Employeer;
+use App\Models\Location;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
@@ -16,7 +18,10 @@ class RegisterController extends Controller
 {
     public function create(): View
     {
-        return view('login.employeer_register');
+        $companies = Company::all();
+        $locations = Location::all();
+       
+        return view('login.employeer_register',compact('companies','locations'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -31,6 +36,8 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'company_id'=>$request->company,
+            'location_id'=>$request->location,
         ]);
      
 

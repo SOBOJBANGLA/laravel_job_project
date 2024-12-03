@@ -38,6 +38,18 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>'required | max:100 | min:5',
+            'company'=>'required',
+            'location'=>'required',
+            'category'=>'required',
+            'jobtype'=>'required',
+            'vacancy'=>'required',
+            'experience'=>'required',
+            'job_end_date'=>'required',
+        ]);
+
+
         $job=new Job;
         $job->title=$request->title;
         $job->company_id=$request->company;
@@ -84,6 +96,16 @@ class JobController extends Controller
      */
     public function update(Request $request, Job $job)
     {
+        $request->validate([
+            'title'=>'required | max:100 | min:5',
+            'company'=>'required',
+            'location'=>'required',
+            'category'=>'required',
+            'jobtype'=>'required',
+            'vacancy'=>'required',
+            'experience'=>'required',
+            'job_end_date'=>'required',
+        ]);
         $job->title=$request->title;
         $job->company_id=$request->company;
         $job->location_id=$request->location;
@@ -101,7 +123,7 @@ class JobController extends Controller
         $job->job_end_date=$request->job_end_date;
         $job->update();
         //return redirect('admin/specialist');
-        return redirect()->route('job.index')->with('msg',"Successfully updated");
+        return redirect()->route('job.index')->with('upt',"Successfully updated");
     }
 
     /**
@@ -110,6 +132,6 @@ class JobController extends Controller
     public function destroy(Job $job)
     {
         $job->delete();
-        return redirect()->route('job.index')->with('msg',"Successfully delete");
+        return redirect()->route('job.index')->with('dlt',"Successfully delete");
     }
 }
