@@ -36,4 +36,7 @@ class Employeer extends Authenticatable
     public function location(){
         return $this->belongsTo(Location::class);
     }
+    public function job(){
+        return $this->hasMany(Job::class);
+    }
 }

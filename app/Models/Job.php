@@ -11,6 +11,7 @@ class Job extends Model
 
     protected $fillable=[
         'title',
+        'employeer_id',
         'company_id',
         'location_id',
         'category_id',
@@ -31,5 +32,8 @@ class Job extends Model
     }
     public function jobtype(){
         return $this->belongsTo(Jobtype::class);
+    }
+    public function employeer(){
+        return $this->belongsTo(Employeer::class);
     }
 }

@@ -32,7 +32,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h5 class="card-title mb-0">Create Company</h5>
+                <h5 class="card-title mb-0">Create Job</h5>
             </div><!-- end card header -->
 
             <div class="card-body">
@@ -42,6 +42,19 @@
                         <label for="exampleInputEmail1" class="form-label">Job Title</label>
                         <input type="text"name="title" value="{{old('title')}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
                         @error('title')
+						<div class="text text-danger">{{$message}}</div>
+						@enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="simpleinput" class="form-label">Employer Name</label>
+                        <select id="simpleinput" name="employer" class="form-select" aria-label="Default select example">
+                            <option selected>Select employer</option>
+                            @foreach($employeers as $employer)	
+                            <option value="{{$employer->id}}" @selected(old('employer')==$employer->id) >{{$employer->name}}</option>
+                            @endforeach
+                        </select>
+                        @error('employer')
 						<div class="text text-danger">{{$message}}</div>
 						@enderror
                     </div>

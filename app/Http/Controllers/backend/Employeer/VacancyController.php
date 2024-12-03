@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\backend\Employeer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -10,16 +10,20 @@ use App\Models\Job;
 use App\Models\Jobtype;
 use App\Models\Location;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class JobController extends Controller
+class VacancyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $items=Job::orderBy('id','desc')->get();
-        return view('backend.job.index',compact('items')) ;
+        //$id=Auth::user()->id;
+        //$items=Job::orderBy('id','desc')->get();
+        $employerId = Auth::id(); 
+         $items = Job::where('employeer_id', $employerId)->get();
+        return view('backend.employer_vacency.index',compact('items')) ;
     }
 
     /**
@@ -32,7 +36,7 @@ class JobController extends Controller
         $locations = Location::all();
         $categories = Category::all();
         $jobtypes = Jobtype::all();
-        return view('backend.job.create',compact('employeers','companies','locations','categories','jobtypes')) ;
+        return view('backend.employer_vacency.create',compact('employeers','companies','locations','categories','jobtypes')) ;
     }
 
     /**
@@ -71,7 +75,7 @@ class JobController extends Controller
         $job->job_end_date=$request->job_end_date;
         $job->save();
         //return redirect('admin/specialist');
-        return redirect()->route('job.index')->with('msg',"Successfully created");
+        return redirect()->route('vacancy.index')->with('msg',"Successfully created");
     }
 
     /**
@@ -85,20 +89,20 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Job $job)
+    public function edit(Job $vacancy)
     {
         $employeers = Employeer::all();
         $companies = Company::all();
         $locations = Location::all();
         $categories = Category::all();
         $jobtypes = Jobtype::all();
-        return view('backend.job.edit',compact('employeers','companies','locations','categories','jobtypes','job')) ;
+        return view('backend.employer_vacency.edit',compact('employeers','companies','locations','categories','jobtypes','vacancy')) ;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Job $job)
+    public function update(Request $request, Job $vacancy)
     {
         $request->validate([
             'title'=>'required | max:100 | min:5',
@@ -110,33 +114,33 @@ class JobController extends Controller
             'experience'=>'required',
             'job_end_date'=>'required',
         ]);
-        $job->title=$request->title;
-        $job->employeer_id=$request->employer;
-        $job->company_id=$request->company;
-        $job->location_id=$request->location;
-        $job->category_id=$request->category;
-        $job->jobtype_id=$request->jobtype;
-        $job->vacancy=$request->vacancy;
-        $job->salary=$request->salary;
-        $job->description=$request->description;
-        $job->benefits=$request->benefits;
-        $job->responsibility=$request->responsibility;
-        $job->qualifications=$request->qualifications;
-        $job->keywords=$request->keywords;
-        $job->experience=$request->experience;
-        $job->company_website=$request->company_website;
-        $job->job_end_date=$request->job_end_date;
-        $job->update();
+        $vacancy->title=$request->title;
+        $vacancy->employeer_id=$request->employer;
+        $vacancy->company_id=$request->company;
+        $vacancy->location_id=$request->location;
+        $vacancy->category_id=$request->category;
+        $vacancy->jobtype_id=$request->jobtype;
+        $vacancy->vacancy=$request->vacancy;
+        $vacancy->salary=$request->salary;
+        $vacancy->description=$request->description;
+        $vacancy->benefits=$request->benefits;
+        $vacancy->responsibility=$request->responsibility;
+        $vacancy->qualifications=$request->qualifications;
+        $vacancy->keywords=$request->keywords;
+        $vacancy->experience=$request->experience;
+        $vacancy->company_website=$request->company_website;
+        $vacancy->job_end_date=$request->job_end_date;
+        $vacancy->update();
         //return redirect('admin/specialist');
-        return redirect()->route('job.index')->with('upt',"Successfully updated");
+        return redirect()->route('vacancy.index')->with('upt',"Successfully updated");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Job $job)
+    public function destroy(Job $vacancy)
     {
-        $job->delete();
-        return redirect()->route('job.index')->with('dlt',"Successfully delete");
+        $vacancy->delete();
+        return redirect()->route('vacancy.index')->with('dlt',"Successfully delete");
     }
 }

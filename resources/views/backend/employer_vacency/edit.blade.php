@@ -36,12 +36,12 @@
             </div><!-- end card header -->
 
             <div class="card-body">
-                <form method="post" action="{{route('job.update',$job->id)}}">
+                <form method="post" action="{{route('vacancy.update',$vacancy->id)}}">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Job Title</label>
-                        <input type="text"name="title" value="{{old('title')??$job->title}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
+                        <input type="text"name="title" value="{{old('title')??$vacancy->title}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
                     </div>
 
                     <div class="mb-3">
@@ -49,7 +49,7 @@
                         <select id="simpleinput" name="employer" class="form-select" aria-label="Default select example">
                             <option selected>Select Company</option>
                             @foreach($employeers as $employer)
-                            <option {{ $job->employeer_id == $employer->id ? 'selected' : '' }} value="{{ $employer->id }}"> {{ $employer->name }} </option> 
+                            <option {{ $vacancy->employeer_id == $employer->id ? 'selected' : '' }} value="{{ $employer->id }}"> {{ $employer->name }} </option> 
                             @endforeach
                         </select>
                     </div>
@@ -59,7 +59,7 @@
                         <select id="simpleinput" name="company" class="form-select" aria-label="Default select example">
                             <option selected>Select Company</option>
                             @foreach($companies as $company) 
-                            <option {{ $job->company_id == $company->id ? 'selected' : '' }} value="{{ $company->id }}"> {{ $company->name }} </option> 
+                            <option {{ $vacancy->company_id == $company->id ? 'selected' : '' }} value="{{ $company->id }}"> {{ $company->name }} </option> 
                             @endforeach
                         </select>
                     </div>
@@ -69,7 +69,7 @@
                         <select id="simpleinput" name="location" class="form-select" aria-label="Default select example">
                             <option selected>Select location </option>
                             @foreach($locations as $location)	
-							<option {{ ($job->location_id == $location->id) ? 'selected' : '' }} value="{{ $location->id}}">{{$location->location_name}}</option>
+							<option {{ ($vacancy->location_id == $location->id) ? 'selected' : '' }} value="{{ $location->id}}">{{$location->location_name}}</option>
 																		
 							@endforeach
                         </select>
@@ -80,7 +80,7 @@
                         <select id="simpleinput"  name="category" class="form-select" aria-label="Default select example">
                             <option selected>Select Category</option>
                             @foreach($categories as $category)	
-							<option {{ ($job->category_id == $category->id) ? 'selected' : '' }} value="{{ $category->id}}">{{$category->category_name}}</option>
+							<option {{ ($vacancy->category_id == $category->id) ? 'selected' : '' }} value="{{ $category->id}}">{{$category->category_name}}</option>
 																		
 							@endforeach
                         </select>
@@ -91,7 +91,7 @@
                         <select id="simpleinput" name="jobtype" class="form-select" aria-label="Default select example">
                             <option selected>Select Job Type</option>
                             @foreach($jobtypes as $jobtype)	
-							<option {{ ($job->jobtype_id == $jobtype->id) ? 'selected' : '' }} value="{{ $jobtype->id}}">{{$jobtype->jobtype_name}}</option>
+							<option {{ ($vacancy->jobtype_id == $jobtype->id) ? 'selected' : '' }} value="{{ $jobtype->id}}">{{$jobtype->jobtype_name}}</option>
 																		
 							@endforeach
                         </select>
@@ -99,54 +99,54 @@
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Vacancy</label>
-                        <input type="text" name="vacancy" value="{{old('vacancy')??$job->vacancy}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Vacancy">
+                        <input type="text" name="vacancy" value="{{old('vacancy')??$vacancy->vacancy}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Vacancy">
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Salary</label>
-                        <input type="text"name="salary" value="{{old('salary')??$job->salary}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Salary">
+                        <input type="text"name="salary" value="{{old('salary')??$vacancy->salary}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Salary">
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Description</label>
-                        <textarea type="text" name="description"  class="form-control" id="exampleInputEmail1" placeholder="Description" rows="10">{{old('description')??$job->description}}</textarea>
+                        <textarea type="text" name="description"  class="form-control" id="exampleInputEmail1" placeholder="Description" rows="10">{{old('description')??$vacancy->description}}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Benefits</label>
-                        <textarea type="text" name="benefits" value="" class="form-control" id="exampleInputEmail1" placeholder="Benefits" rows="10">{{old('benefits')??$job->benefits}}</textarea>
+                        <textarea type="text" name="benefits" value="" class="form-control" id="exampleInputEmail1" placeholder="Benefits" rows="10">{{old('benefits')??$vacancy->benefits}}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Responsibility</label>
-                        <textarea type="text" name="responsibility" value="" class="form-control" id="exampleInputEmail1" placeholder="Responsibility" rows="10">{{old('responsibility')??$job->responsibility}}</textarea>
+                        <textarea type="text" name="responsibility" value="" class="form-control" id="exampleInputEmail1" placeholder="Responsibility" rows="10">{{old('responsibility')??$vacancy->responsibility}}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Qualifications</label>
-                        <textarea type="text" name="qualifications" value="" class="form-control" id="exampleInputEmail1" placeholder="Qualifications" rows="10">{{old('qualifications')??$job->qualifications}}</textarea>
+                        <textarea type="text" name="qualifications" value="" class="form-control" id="exampleInputEmail1" placeholder="Qualifications" rows="10">{{old('qualifications')??$vacancy->qualifications}}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Keywords</label>
-                        <textarea type="text" name="keywords" value="" class="form-control" id="exampleInputEmail1" placeholder="Keywords" rows="10">{{old('keywords')??$job->keywords}}</textarea>
+                        <textarea type="text" name="keywords" value="" class="form-control" id="exampleInputEmail1" placeholder="Keywords" rows="10">{{old('keywords')??$vacancy->keywords}}</textarea>
                     </div>
 
                     
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Experience</label>
-                        <input type="text" name="experience" value="{{old('experience')??$job->experience}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Experience">
+                        <input type="text" name="experience" value="{{old('experience')??$vacancy->experience}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Experience">
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Company  website</label>
-                        <input type="text" name="company_website" value="{{old('company_website')??$job->company_website}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company website">
+                        <input type="text" name="company_website" value="{{old('company_website')??$vacancy->company_website}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company website">
                     </div>
 
                     <div class="mb-3">
                         <label for="example-date" class="form-label">Job end date</label>
-                        <input type="date" id="example-date" value="{{old('job_end_date')??$job->job_end_date}}" class="form-control" name="job_end_date">
+                        <input type="date" id="example-date" value="{{old('job_end_date')??$vacancy->job_end_date}}" class="form-control" name="job_end_date">
                     </div>
                     
                     

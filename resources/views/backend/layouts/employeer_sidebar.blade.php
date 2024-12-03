@@ -28,24 +28,12 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="#sidebarDashboards" data-bs-toggle="collapse">
+                    <a href="{{url('/employeer/dashboard')}}" >
                         <i data-feather="home"></i>
                         <span>Employeer Dashboard </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarDashboards">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="index.html" class="tp-link">CRM</a>
-                            </li>
-                            <li>
-                                <a href="analytics.html" class="tp-link">Analytics</a>
-                            </li>
-                            <li>
-                                <a href="ecommerce.html" class="tp-link">eCommerce</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </li>
 
                 <li class="menu-title">Pages</li>
@@ -53,32 +41,18 @@
                 <li>
                     <a href="#sidebarAuth" data-bs-toggle="collapse">
                         <i data-feather="users"></i>
-                        <span> Authentication </span>
+                        <span> Jobs </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarAuth">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="auth-login.html" class="tp-link">Log In</a>
+                                <a href="{{route('vacancy.index')}}" class="tp-link">Jobs List</a>
                             </li>
                             <li>
-                                <a href="auth-register.html" class="tp-link">Register</a>
+                                <a href="{{route('vacancy.create')}}" class="tp-link">Post a job</a>
                             </li>
-                            <li>
-                                <a href="auth-recoverpw.html" class="tp-link">Recover Password</a>
-                            </li>
-                            <li>
-                                <a href="auth-lock-screen.html" class="tp-link">Lock Screen</a>
-                            </li>
-                            <li>
-                                <a href="auth-confirm-mail.html" class="tp-link">Confirm Mail</a>
-                            </li>
-                            <li>
-                                <a href="email-verification.html" class="tp-link">Email Verification</a>
-                            </li>
-                            <li>
-                                <a href="auth-logout.html" class="tp-link">Logout</a>
-                            </li>
+                          
                         </ul>
                     </div>
                 </li>

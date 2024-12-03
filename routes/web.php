@@ -1,8 +1,9 @@
 <?php
 
-
+use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CompanyController;
+use App\Http\Controllers\backend\Employeer\VacancyController;
 use App\Http\Controllers\backend\EmployeerController;
 use App\Http\Controllers\backend\JobController;
 use App\Http\Controllers\backend\JobtypeController;
@@ -64,6 +65,9 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::resource('/location',LocationController::class);
     Route::resource('/job',JobController::class);
     Route::resource('/employeer',EmployeerController::class);
+    Route::get('/report-form', [AdminController::class, 'showReportForm'])->name('admin.report.form');
+    Route::get('/report', [AdminController::class, 'generateReport'])->name('admin.report');
+
 
 });
 
@@ -84,7 +88,8 @@ Route::middleware('guest:employeer')->prefix('employeer')->group( function () {
 Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
     Route::get('/profile', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofile'])->name('employeer.profile');
     Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofilestore'])->name('employeer.profile.store');
-
+    Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'changepasswordstore'])->name('employeer.profile.store');
+    Route::resource('/vacancy',VacancyController::class);
     Route::post('logout', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'logout'])->name('employeer.logout');
     
     Route::view('/dashboard','backend.employeer_dashboard');

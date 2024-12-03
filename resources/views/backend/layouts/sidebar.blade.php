@@ -152,6 +152,25 @@
                     </div>
                 </li>
 
+                <li>
+                    <a href="#sidebarAuth" data-bs-toggle="collapse">
+                        <i data-feather="users"></i>
+                        <span> Report </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarAuth">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{route('admin.report')}}" class="tp-link">Job Report</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.report.form')}}" class="tp-link">Find Company</a>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </li>
+
 
 
 

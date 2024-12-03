@@ -191,6 +191,7 @@
                                                         <div class="mb-3">
                                                             <label for="exampleInputEmail1" class="form-label">Employeer Name</label>
                                                             <input type="text"name="name" value="{{$items->name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
+                                                            @error('name') <div class="text text-danger">{{ $message }}</div> @enderror
                                                         </div>
                                     
                                                         {{-- <div class="mb-3">
@@ -210,6 +211,7 @@
                                                                 <option value="{{ $company->id }}"> {{ $company->name }} </option> 
                                                                 @endforeach
                                                             </select>
+                                                            @error('company') <div class="text text-danger">{{ $message }}</div> @enderror
                                                         </div>
                                     
                                                         <div class="mb-3">
@@ -221,12 +223,13 @@
                                                                                                             
                                                                 @endforeach
                                                             </select>
+                                                            @error('location') <div class="text text-danger">{{ $message }}</div> @enderror
                                                         </div>
                                     
                                     
                                                         <div class="form-group mb-3">
                                                             <label for="emailaddress" class="form-label">Email address</label>
-                                                            <input class="form-control" type="email" name="email" value="{{$items->email}}+" id="emailaddress"   required="" placeholder="Enter your email">
+                                                            <input class="form-control" type="email" name="email" value="{{$items->email}}" id="emailaddress"   required="" placeholder="Enter your email">
                                                             @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                                                         </div>
                                     
@@ -235,12 +238,14 @@
                                                             <label for="formFile" class="form-label">Image</label>
                                                             <input class="form-control" type="file" name="photo" id="formFile">
                                                             <img src="{{ asset($items->photo) }}" width="100px">
+                                                            @error('photo') <div class="text text-danger">{{ $message }}</div> @enderror
                                                         </div>
                                     
                                     
                                                         <div class="mb-3">
                                                             <label for="exampleInputPassword1" class="form-label">About</label>
                                                             <textarea type="text" name="description"  class="form-control" id="exampleInputEmail1" placeholder="Description" rows="10">{{Auth()->guard()->user()->description}}</textarea>
+                                                            @error('description') <div class="text text-danger">{{ $message }}</div> @enderror
                                                         </div>
 
                                                         <button type="submit" class="btn btn-primary">Edit</button>
@@ -262,22 +267,24 @@
                                                 </div>
 
                                                 <div class="card-body mb-0">
+                                                    <form method="post" action="{{route('employeer.profile.store')}}" >
+                                                        @csrf
                                                     <div class="form-group mb-3 row">
                                                         <label class="form-label">Old Password</label>
                                                         <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="password" placeholder="Old Password">
+                                                            <input class="form-control" name="old_password"  type="password" placeholder="Old Password">
                                                         </div>
                                                     </div>
                                                     <div class="form-group mb-3 row">
                                                         <label class="form-label">New Password</label>
                                                         <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="password" placeholder="New Password">
+                                                            <input class="form-control" type="password" name="new_password" placeholder="New Password">
                                                         </div>
                                                     </div>
                                                     <div class="form-group mb-3 row">
                                                         <label class="form-label">Confirm Password</label>
                                                         <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="password" placeholder="Confirm Password">
+                                                            <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password">
                                                         </div>
                                                     </div>
 
@@ -287,7 +294,7 @@
                                                             <button type="button" class="btn btn-danger">Cancel</button>
                                                         </div>
                                                     </div>
-
+                                                </form>
                                                 </div><!--end card-body-->
                                             </div>
                                         </div>
@@ -296,170 +303,7 @@
                                 </div>
                             </div> <!-- end education -->
 
-                            <div class="tab-pane pt-4" id="friends_setting" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-11.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-primary-subtle rounded-2 text-primary mb-2 fw-normal">Team Member</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Jimmy L. Keener</h5>
-                                                        <p class="mt-1 mb-0">JimmyLKeener@gmail.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-primary">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-3.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-dark-subtle rounded-2 text-dark mb-2 fw-normal">Team Member</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Paul D. Garner</h5>
-                                                        <p class="mt-1 mb-0">PaulDGarner@armyspy.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-dark">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-5.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-secondary-subtle rounded-2 text-secondary mb-2 fw-normal">Team Member</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Dallas J. Miller</h5>
-                                                        <p class="mt-1 mb-0">dallasinfo@gmail.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-secondary">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-8.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-danger-subtle rounded-2 text-danger mb-2 fw-normal">Team Member</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Kristin R. Hunter</h5>
-                                                        <p class="mt-1 mb-0">kristinrhunter@gmail.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-danger">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border mb-md-0">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-9.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-secondary-subtle rounded-2 text-secondary mb-2 fw-normal">Android Developer</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Jacqueline M. Dunn</h5>
-                                                        <p class="mt-1 mb-0">jacquelinemdunn@gmail.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-secondary">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border mb-md-0">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-4.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-primary-subtle rounded-2 text-primary mb-2 fw-normal">Team Member</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Ricky V. Johnson</h5>
-                                                        <p class="mt-1 mb-0">rickyvjohnson@gmail.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-danger">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border mb-md-0">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-12.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-warning-subtle rounded-2 text-warning mb-2 fw-normal">Software Developer</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Kenneth S. Cormier</h5>
-                                                        <p class="mt-1 mb-0">kennethscormier@gmail.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-info">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-3">
-                                        <div class="card border mb-0">
-                                            <div class="card-body">
-                                                <div class="text-center">
-                                                    <img src="assets/images/users/user-2.jpg" class="rounded-circle avatar-xl img-thumbnail" alt="image profile">
-
-                                                    <div class="mt-2 mb-3">
-                                                        <span class="badge bg-danger-subtle rounded-2 text-danger mb-2 fw-normal">Team Leader</span>
-                                                        <h5 class="m-0 fw-medium text-dark fs-16">Evelyn J. Serra</h5>
-                                                        <p class="mt-1 mb-0">evelynjserra@gmail.com</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <button type="button" class="btn btn-sm btn-light me-2">Block</button>
-                                                        <button type="button" class="btn btn-sm btn-warning">Unfollow</button>
-                                                    </div>
-                                                </div>
-                                            </div><!--end card-body-->
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div> <!-- end education -->
+                            <!-- end education -->
 
                         </div> <!-- Tab panes -->
                     </div>
@@ -471,3 +315,5 @@
     <!-- container-fluid -->
 </div>
 @endsection
+
+ 
