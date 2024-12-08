@@ -8,6 +8,9 @@ use App\Http\Controllers\backend\EmployeerController;
 use App\Http\Controllers\backend\JobController;
 use App\Http\Controllers\backend\JobtypeController;
 use App\Http\Controllers\backend\LocationController;
+use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\JobslistController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +25,73 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('jobs', [JobslistController::class, 'index'])->name('jobs');
+Route::get('about', [HomeController::class, 'about'])->name('about');
+Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/search', [JobslistController::class, 'search'])->name('search');
+
+
+
+// Route::get('front_register', [CandidateController::class, 'register'])->name('candidate_register');
+
+// Route::post('/process-register',[CandidateController::class,'processRegistration'])->name('processRegistration');
+
+
+
+Route::group(['prefix' => '/'],function(){
+
+    //guest route
+    Route::group(['middleware' => 'guest'],function(){
+
+        Route::get('front_register', [CandidateController::class, 'register'])->name('candidate_register');
+        Route::post('front_register', [CandidateController::class, 'store']);
+
+        Route::get('front_login', [CandidateController::class, 'login'])->name('candidate_login_form');
+        Route::post('authenticate',[CandidateController::class,'authenticate'])->name('authenticate');  
+
+    });
+
+    //Authenticate route
+    Route::group(['middleware' => 'auth'],function(){
+        Route::get('logout',[CandidateController::class,'logout'])->name('user_logout');
+        Route::get('profile_setting', [HomeController::class, 'profile_setting'])->name('profile_setting'); 
+        Route::get('profile_create', [CandidateController::class,'candidateCreate'])->name('profile_create');
+         Route::post('profile_store', [CandidateController::class,'candidateStore'])->name('profile_store');
+         Route::get('user_profile', [CandidateController::class,'user_profile'])->name('user_profile');
+         Route::get('editProfile',[CandidateController::class,'editProfile'])->name('editProfile');
+         Route::post('editProfile',[CandidateController::class,'updateProfile'])->name('updateProfile');
+
+//          Route::post('/updateProfile/{user}', [ProfileController::class, 'update'])->name('updateProfile');
+
+// Route::patch('/updateProfile/{user}', [ProfileController::class, 'update'])->name('updateProfile');
+
+
+    });
+
 });
+
+// Route::middleware('guest:user')->prefix('/')->group( function () {
+
+//     Route::get('front_register', [CandidateController::class, 'register'])->name('candidate_register');
+//     Route::post('front_register', [CandidateController::class, 'store']);
+
+//     Route::get('front_login', [CandidateController::class, 'login'])->name('candidate_login_form');
+//      Route::post('authenticate',[CandidateController::class,'authenticate'])->name('authenticate');  
+
+// });
+
+// Route::middleware('auth:user')->prefix('/')->group( function () {
+
+//     Route::get('profile_setting', [HomeController::class, 'profile_setting'])->name('profile_setting');
+//     Route::get('logout',[CandidateController::class,'logout'])->name('user_logout');
+
+
+// });
 
 //Admin Dashboard
 
@@ -95,4 +162,6 @@ Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
     Route::view('/dashboard','backend.employeer_dashboard');
 
 });
+
+
 

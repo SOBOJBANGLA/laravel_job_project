@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2024 at 07:44 PM
+-- Generation Time: Dec 08, 2024 at 02:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,6 +47,39 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `crea
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `candidate_details`
+--
+
+CREATE TABLE `candidate_details` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `f_name` varchar(20) DEFAULT NULL,
+  `l_name` varchar(20) DEFAULT NULL,
+  `occupation` varchar(20) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `address` varchar(300) DEFAULT NULL,
+  `about` varchar(300) DEFAULT NULL,
+  `image` varchar(50) DEFAULT NULL,
+  `bio` varchar(50) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `candidate_details`
+--
+
+INSERT INTO `candidate_details` (`id`, `f_name`, `l_name`, `occupation`, `phone`, `address`, `about`, `image`, `bio`, `user_id`, `status`, `created_at`, `updated_at`) VALUES
+(5, 'Abu Salehh', 'hhhhh', 'WD', '01624632072', 'Khilgaon, Dhaka', 'hhhhhhhhhh', 'images/20241208013424.jpg', 'images/20241208013424.pdf', 5, 1, '2024-12-07 09:38:53', '2024-12-07 19:34:24'),
+(6, 'MD.', 'Yousuf Mollah', 'WD', NULL, 'Dhaka,Bangladesh', 'aaaaaaaaaaaaa', 'images/20241207171556.jpg', 'images/20241207171556.pdf', 3, 1, '2024-12-07 11:15:56', '2024-12-07 11:15:56'),
+(10, 'Hasib', 'Ahmed', 'WD', '012546789', 'Dhaka', 'dddddddddd', 'images/nophoto.jpg', 'images/20241207175039.pdf', 2, 1, '2024-12-07 11:50:39', '2024-12-07 11:50:39'),
+(12, 'Kabir', 'Ahmed', 'WD', '01624632072', 'jjjjjjjjjjjjjjjjj', 'llllllllllllllllllllllll', 'images/20241207180024.jpg', 'images/20241207180024.pdf', 4, 1, '2024-12-07 12:00:24', '2024-12-07 12:00:24'),
+(13, 'Masud', 'Kamal', 'WD', '02154699777', 'ggggggggggggg', 'dddddddddddddd', 'images/nophoto.jpg', 'images/20241207182850.pdf', 5, 1, '2024-12-07 12:28:50', '2024-12-07 12:28:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
@@ -64,7 +97,8 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
 (1, 'Accounting', '2024-12-01 05:04:01', '2024-12-01 05:04:01'),
 (2, 'Banking', '2024-12-01 05:04:17', '2024-12-01 05:04:17'),
-(3, 'Teaching', '2024-12-03 10:44:23', '2024-12-03 10:44:23');
+(3, 'Teaching', '2024-12-03 10:44:23', '2024-12-03 10:44:23'),
+(4, 'Web Development', '2024-12-05 21:35:34', '2024-12-05 21:35:34');
 
 -- --------------------------------------------------------
 
@@ -182,7 +216,10 @@ INSERT INTO `jobs` (`id`, `title`, `employeer_id`, `company_id`, `location_id`, 
 (6, 'Sr.Officer', 6, 4, 1, 2, 1, 5, '25000', 'ttttt', 'eeee', 'yyyyyy', 'uuuuuuu', 'ooooooo', '2', 'www.hhee.com', '2024-12-09 00:00:00', '2024-12-03 10:42:03', '2024-12-03 10:42:03'),
 (7, 'Headmaster', 15, 7, 5, 3, 1, 1, '27000', 'rrrrr', 'tttt', 'yyyyy', 'aaaa', 'ddd', '2', 'www.mordern.school', '2024-12-16 00:00:00', '2024-12-03 10:46:58', '2024-12-03 10:49:00'),
 (8, 'Teacher(Bangla)', 15, 7, 5, 3, 1, 2, '20000', 'eeee', 'rrrrrr', 'wwww', 'ddddd', 'eeeeee', '2', 'www.hhh.com', '2024-12-24 00:00:00', '2024-12-03 10:50:17', '2024-12-03 10:50:17'),
-(9, 'Cashier', 9, 6, 3, 1, 1, 2, '20000', 'ddddd', 'bbb', 'rrrrrrr', 'qqqqq', 'kkkk', '2 Years', 'www.fff.com', '2024-12-16 00:00:00', '2024-12-03 12:34:32', '2024-12-03 12:34:32');
+(9, 'Cashier', 9, 6, 3, 1, 1, 2, '20000', 'ddddd', 'bbb', 'rrrrrrr', 'qqqqq', 'kkkk', '2 Years', 'www.fff.com', '2024-12-16 00:00:00', '2024-12-03 12:34:32', '2024-12-03 12:34:32'),
+(10, 'Junior Developer', 15, 5, 4, 4, 2, 2, '20000', 'sssssssssss', 'bbbbbbbbbbb', 'rrrrrrrrrrrrrrr', 'qqqqqqqqqqqqqqq', 'kkkkkkkkkkkkkk', '0', 'www.jakir.com', '2024-12-18 00:00:00', '2024-12-05 21:37:38', '2024-12-05 21:37:38'),
+(11, 'Senior Developer', 15, 5, 2, 4, 4, 15, '25000', 'ffffffff', 'tttttttttt', 'eeeeeeeeee', 'qqqqqqqqqqq', 'fffffffffffff', '2', 'www.jakir.com', '2024-12-27 00:00:00', '2024-12-05 21:42:11', '2024-12-05 21:42:11'),
+(12, 'Senior Developer', 15, 5, 4, 4, 1, 2, '40000', 'fffffffffff', 'eeeeeeeeee', 'ttttttttt', 'wwwwwwwww', 'tyyyyyyyyy', '2', 'www.jakir.com', '2024-12-22 00:00:00', '2024-12-05 21:45:54', '2024-12-05 21:45:54');
 
 -- --------------------------------------------------------
 
@@ -203,7 +240,9 @@ CREATE TABLE `jobtypes` (
 
 INSERT INTO `jobtypes` (`id`, `jobtype_name`, `created_at`, `updated_at`) VALUES
 (1, 'Full Time', '2024-12-01 05:04:37', '2024-12-01 05:04:37'),
-(2, 'Part Time', '2024-12-01 05:04:58', '2024-12-01 05:04:58');
+(2, 'Part Time', '2024-12-01 05:04:58', '2024-12-01 05:04:58'),
+(3, 'Mid Time', '2024-12-05 20:32:42', '2024-12-05 20:32:42'),
+(4, 'Freelancer', '2024-12-05 20:33:05', '2024-12-05 20:33:05');
 
 -- --------------------------------------------------------
 
@@ -259,7 +298,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (29, '2024_11_27_134635_create_jobtypes_table', 6),
 (30, '2024_11_29_052128_create_jobs_table', 6),
 (31, '2024_11_29_060605_create_locations_table', 6),
-(32, '2024_12_03_140842_alter_jobs_table', 7);
+(32, '2024_12_03_140842_alter_jobs_table', 7),
+(33, '2024_12_07_115709_create_candidate_details_table', 8);
 
 -- --------------------------------------------------------
 
@@ -310,6 +350,17 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', NULL, '$2y$10$OA9Mc6TiQZ8qNE.RmtE3KOox0D.Pus.toaqqe/xMKDbonVjDFUUzq', NULL, '2024-12-05 07:14:59', '2024-12-05 07:14:59'),
+(2, 'Hasib', 'hasib@gmail.com', NULL, '$2y$10$WybFottHrPfMsQJ3ULQfBegFNvr.7E100ForSU46l5a16MX9HXibW', NULL, '2024-12-05 07:52:24', '2024-12-05 07:52:24'),
+(3, 'Yousuf Mollah', 'yousuf@gmail.com', NULL, '$2y$10$BZFQG5/ssRGITWz8Ht17YuJhpdNZP0viSjALCHskMkq052ealcek6', NULL, '2024-12-07 11:13:49', '2024-12-07 11:13:49'),
+(4, 'Kabir', 'kabir@gmail.com', NULL, '$2y$10$Rr7d9hjE/ECK7SnLq9HZ6ei2MpUTwkaNrm7Louc1eqPpN1tXnduw2', NULL, '2024-12-07 11:56:06', '2024-12-07 11:56:06'),
+(5, 'Masud Kamal', 'mamun@gmail.com', NULL, '$2y$10$plOZTKQCkbC5c0y4SWcmSeIzYsgEMTqoKuDO8NsvVg/EuuZNaTl0K', NULL, '2024-12-07 12:26:24', '2024-12-07 12:26:24');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -319,6 +370,12 @@ CREATE TABLE `users` (
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
+
+--
+-- Indexes for table `candidate_details`
+--
+ALTER TABLE `candidate_details`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `categories`
@@ -402,10 +459,16 @@ ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `candidate_details`
+--
+ALTER TABLE `candidate_details`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `companies`
@@ -429,13 +492,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `jobtypes`
 --
 ALTER TABLE `jobtypes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `locations`
@@ -447,7 +510,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -459,7 +522,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
