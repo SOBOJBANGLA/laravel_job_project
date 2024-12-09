@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2024 at 02:47 AM
+-- Generation Time: Dec 09, 2024 at 02:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,6 +47,35 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `crea
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `applicants`
+--
+
+CREATE TABLE `applicants` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contact` varchar(20) NOT NULL,
+  `cv` varchar(50) NOT NULL,
+  `candidate_id` int(11) NOT NULL,
+  `job_id` int(11) NOT NULL,
+  `employeer_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `applicants`
+--
+
+INSERT INTO `applicants` (`id`, `name`, `email`, `contact`, `cv`, `candidate_id`, `job_id`, `employeer_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'A.S.M Abdullah', 'asm@gmail.com', '1234567895', 'images/20241209013250.pdf', 5, 7, 15, 0, '2024-12-08 19:32:50', '2024-12-08 19:32:50'),
+(2, 'A.S.M Abdullah', 'asm@gmail.com', '1234567895', 'images/20241209014048.pdf', 5, 10, 15, 0, '2024-12-08 19:40:48', '2024-12-08 19:40:48'),
+(3, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209014756.pdf', 1, 11, 15, 0, '2024-12-08 19:47:56', '2024-12-08 19:47:56');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `candidate_details`
 --
 
@@ -71,11 +100,13 @@ CREATE TABLE `candidate_details` (
 --
 
 INSERT INTO `candidate_details` (`id`, `f_name`, `l_name`, `occupation`, `phone`, `address`, `about`, `image`, `bio`, `user_id`, `status`, `created_at`, `updated_at`) VALUES
-(5, 'Abu Salehh', 'hhhhh', 'WD', '01624632072', 'Khilgaon, Dhaka', 'hhhhhhhhhh', 'images/20241208013424.jpg', 'images/20241208013424.pdf', 5, 1, '2024-12-07 09:38:53', '2024-12-07 19:34:24'),
 (6, 'MD.', 'Yousuf Mollah', 'WD', NULL, 'Dhaka,Bangladesh', 'aaaaaaaaaaaaa', 'images/20241207171556.jpg', 'images/20241207171556.pdf', 3, 1, '2024-12-07 11:15:56', '2024-12-07 11:15:56'),
 (10, 'Hasib', 'Ahmed', 'WD', '012546789', 'Dhaka', 'dddddddddd', 'images/nophoto.jpg', 'images/20241207175039.pdf', 2, 1, '2024-12-07 11:50:39', '2024-12-07 11:50:39'),
 (12, 'Kabir', 'Ahmed', 'WD', '01624632072', 'jjjjjjjjjjjjjjjjj', 'llllllllllllllllllllllll', 'images/20241207180024.jpg', 'images/20241207180024.pdf', 4, 1, '2024-12-07 12:00:24', '2024-12-07 12:00:24'),
-(13, 'Masud', 'Kamal', 'WD', '02154699777', 'ggggggggggggg', 'dddddddddddddd', 'images/nophoto.jpg', 'images/20241207182850.pdf', 5, 1, '2024-12-07 12:28:50', '2024-12-07 12:28:50');
+(13, 'Masud', 'Kamal', 'WD', '02154699777', 'ggggggggggggg', 'ddddddddddddddrr', 'images/20241208121154.jpg', 'documents/20241208121154.pdf', 5, 1, '2024-12-07 12:28:50', '2024-12-08 06:11:54'),
+(14, 'Kawsar', 'Ahmed', 'WD', '012345678', 'ggggggggggggg', 'hhhhhhhhhhhh', 'images/20241208115701.jpg', 'documents/20241208115701.pdf', 6, 1, '2024-12-08 05:21:06', '2024-12-08 05:57:01'),
+(15, 'Abu Saleh', 'Abdullah', 'WD', '2154699777', 'aaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbb', 'images/20241208125518.jpg', 'documents/20241208125518.pdf', 1, 1, '2024-12-08 06:54:44', '2024-12-08 06:55:18'),
+(16, 'Noman', 'Abdullah', 'WD', '01234567897', 'Basabo,Dhaka', 'gggggggggg', 'images/20241208125946.jpg', 'images/20241208125923.pdf', 7, 1, '2024-12-08 06:59:23', '2024-12-08 06:59:46');
 
 -- --------------------------------------------------------
 
@@ -299,7 +330,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (30, '2024_11_29_052128_create_jobs_table', 6),
 (31, '2024_11_29_060605_create_locations_table', 6),
 (32, '2024_12_03_140842_alter_jobs_table', 7),
-(33, '2024_12_07_115709_create_candidate_details_table', 8);
+(33, '2024_12_07_115709_create_candidate_details_table', 8),
+(34, '2024_12_08_153941_create_applicants_table', 9);
 
 -- --------------------------------------------------------
 
@@ -358,7 +390,9 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (2, 'Hasib', 'hasib@gmail.com', NULL, '$2y$10$WybFottHrPfMsQJ3ULQfBegFNvr.7E100ForSU46l5a16MX9HXibW', NULL, '2024-12-05 07:52:24', '2024-12-05 07:52:24'),
 (3, 'Yousuf Mollah', 'yousuf@gmail.com', NULL, '$2y$10$BZFQG5/ssRGITWz8Ht17YuJhpdNZP0viSjALCHskMkq052ealcek6', NULL, '2024-12-07 11:13:49', '2024-12-07 11:13:49'),
 (4, 'Kabir', 'kabir@gmail.com', NULL, '$2y$10$Rr7d9hjE/ECK7SnLq9HZ6ei2MpUTwkaNrm7Louc1eqPpN1tXnduw2', NULL, '2024-12-07 11:56:06', '2024-12-07 11:56:06'),
-(5, 'Masud Kamal', 'mamun@gmail.com', NULL, '$2y$10$plOZTKQCkbC5c0y4SWcmSeIzYsgEMTqoKuDO8NsvVg/EuuZNaTl0K', NULL, '2024-12-07 12:26:24', '2024-12-07 12:26:24');
+(5, 'Masud Kamal', 'mamun@gmail.com', NULL, '$2y$10$plOZTKQCkbC5c0y4SWcmSeIzYsgEMTqoKuDO8NsvVg/EuuZNaTl0K', NULL, '2024-12-07 12:26:24', '2024-12-07 12:26:24'),
+(6, 'Kawsar', 'kawsar@gmail.com', NULL, '$2y$10$s97h2g0Y51t6unZELgOO5.G/fYx4qwomxzviKZgd/bpmvv7vOWizm', NULL, '2024-12-08 05:19:20', '2024-12-08 05:19:20'),
+(7, 'Noman', 'noman@gmail.com', NULL, '$2y$10$/T0NmUkwt5.j/yNjguVmMuEsXDY/sFLniZBdVOP/uYrkpxZmVeVZS', NULL, '2024-12-08 06:57:52', '2024-12-08 06:57:52');
 
 --
 -- Indexes for dumped tables
@@ -370,6 +404,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
+
+--
+-- Indexes for table `applicants`
+--
+ALTER TABLE `applicants`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `candidate_details`
@@ -459,10 +499,16 @@ ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `applicants`
+--
+ALTER TABLE `applicants`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `candidate_details`
 --
 ALTER TABLE `candidate_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -510,7 +556,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -522,7 +568,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

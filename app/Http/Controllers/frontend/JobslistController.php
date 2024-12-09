@@ -47,6 +47,14 @@ class JobslistController extends Controller
           return view('frontend.jobsList', compact('jobs','jobtypes','locations','categories'));
 }
 
+public function jobDetail($jobId){
+    // $jobtypes = Jobtype::all();
+    // $locations = Location::all();
+    // $categories = Category::all();
+    $job = Job::find($jobId);
+    return view('frontend.jobsdetail',compact('job'));
+}
+
 
 
 }

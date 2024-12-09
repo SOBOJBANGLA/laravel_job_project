@@ -12,15 +12,14 @@
                         <div class="profile-banner relative text-transparent">
                             <input id="pro-banner" name="profile-banner" type="file" class="hidden" onchange="loadFile(event)" />
                             <div class="relative shrink-0">
-                                <img src="images/hero/bg5.jpg" class="rounded shadow" id="profile-banner" alt="">
+                                <img src="{{ asset('images/hero/bg5.jpg') }}" class="rounded shadow" id="profile-banner" alt="">
                                 <label class="profile-image-label" for="pro-banner"></label>
                             </div>
                         </div>
                     </div>
-                    <form action="{{route('updateProfile')}}" method="post" enctype="multipart/form-data">
-                        
-                        
+                    <form action="{{ route('updateProfile', $candidate->user_id) }}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('POST')
                         
                     <div class="candidate-profile d-flex align-items-end mx-2">
                         <div class="profile-pic">
@@ -72,7 +71,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Last Name:<span class="text-danger">*</span></label>
-                                    <input name="lname" value="" id="lastname" type="text" class="form-control" placeholder="Last Name :">
+                                    <input name="lname" value="{{ $candidate->l_name }}" id="lastname" type="text" class="form-control" placeholder="Last Name :">
                                 </div>
                             </div><!--end col-->
 
@@ -97,7 +96,7 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Phone No. :</label>
-                                    <input id="number" name="phone" value="" type="text" class="form-control" placeholder="Phone :">
+                                    <input id="number" name="phone" value="{{ $candidate->phone }}" type="text" class="form-control" placeholder="Phone :">
                                 </div>
                             </div><!--end col-->
 
@@ -112,7 +111,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Address :</label>
-                                    <textarea name="address" id="comments2" rows="4" class="form-control" placeholder="Address"></textarea>
+                                    <textarea name="address" id="comments2" rows="4" class="form-control" placeholder="Address">{{ $candidate->address }}</textarea>
                                 </div>
                             </div><!--end col-->
 
@@ -120,7 +119,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Introduction :</label>
-                                    <textarea name="about" id="comments2" rows="4" class="form-control" placeholder="Introduction :"></textarea>
+                                    <textarea name="about" id="comments2" rows="4" class="form-control" placeholder="Introduction :">{{ $candidate->about }}</textarea>
                                 </div>
                             </div><!--end col-->
 

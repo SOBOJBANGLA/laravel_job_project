@@ -56,7 +56,7 @@ class CandidateController extends Controller
         if ($validator->passes()) {
 
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                return redirect()->route('profile_setting');
+                return redirect()->route('user_profile');
             } else {
                 return redirect()->route('candidate_login_form')->with('error','Either Email/Password is incorrect');
             }
@@ -130,73 +130,61 @@ class CandidateController extends Controller
 
     public function user_profile(Request $request){
         // $items=CandidateDetails::orderBy('id','desc')->get();
-        $employerId = Auth::id(); 
-        $items = CandidateDetails::where('user_id', $employerId)->get();
-
-
-        // $id=Auth::user()->id;
-        // $items=CandidateDetails::find($id);
+        $userId = Auth::id(); 
+        $candidate = CandidateDetails::where('user_id', $userId)->get();
        
-        return view('frontend.profile',compact('items'));
+        return view('frontend.profile',compact('candidate'));
     }
 
 
-    public function editProfile(CandidateDetails $candidate)
-    {
-         $id=Auth::user()->id;
-         $candidate=CandidateDetails::find($id);
 
-        //$candidate=CandidateDetails::all();
-        
-       
-        return view('frontend.profile_setting_edit',compact('candidate')) ;
-    }
+    public function editProfile($userId)
+{
+    $id = Auth::user()->id;
+    $candidate = CandidateDetails::where('user_id', $id)->first();
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function updateProfile(Request $request)
-    {
+    return view('frontend.profile_setting_edit', compact('candidate'));
+}
 
-        $id=Auth::user()->id;
-         $candidate=CandidateDetails::find($id);
-        $request->validate([
-            
-            'photo'=>'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-            'pdf' => 'required|mimes:pdf|max:2048',
-            
-        ]);
-        //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
 
+    public function updateProfile(Request $request, $userId)
+{
+    $request->validate([
+        'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+        'pdf' => 'nullable|mimes:pdf|max:2048',
+    ]);
+
+    $candidate = CandidateDetails::where('user_id', $userId)->first();
+
+    if ($candidate) {
         if ($image = $request->file('photo')) {
             $destinationPath = 'images/';
             $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $postImage);
-            $photo = $destinationPath.$postImage;
-        }else {
-            $photo = 'images/nophoto.jpg';
+            $candidate->image = $destinationPath.$postImage;
         }
 
         if ($bio = $request->file('pdf')) {
-            $destinationPath = 'images/';
-            $postImage = date('YmdHis') . "." . $bio->getClientOriginalExtension();
-            $bio->move($destinationPath, $postImage);
-            $bio = $destinationPath.$postImage;
+            $destinationPath = 'documents/';
+            $postPdf = date('YmdHis') . "." . $bio->getClientOriginalExtension();
+            $bio->move($destinationPath, $postPdf);
+            $candidate->bio = $destinationPath.$postPdf;
         }
 
-        $candidate->f_name=$request->fname;
-        $candidate->l_name=$request->lname;
-        $candidate->occupation=$request->occupation;
-        $candidate->phone=$request->phone;
-        $candidate->image=$photo;
-        $candidate->bio=$bio;
-        $candidate->address=$request->address;
-        $candidate->about=$request->about;
-        $candidate->user_id=$request->user_id;
-        $candidate->update();
-        //return redirect('admin/specialist');
-        return redirect()->route('user_profile')->with('msg',"Successfully created");
+        $candidate->f_name = $request->fname;
+        $candidate->l_name = $request->lname;
+        $candidate->occupation = $request->occupation;
+        $candidate->phone = $request->phone;
+        $candidate->address = $request->address;
+        $candidate->about = $request->about;
+        $candidate->save();
+
+        return redirect()->route('user_profile')->with('msg', "Successfully updated");
     }
+
+    return back()->with('error', 'Profile not found');
+}
 
 
 }

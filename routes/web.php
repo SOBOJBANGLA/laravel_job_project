@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\JobController;
 use App\Http\Controllers\backend\JobtypeController;
 use App\Http\Controllers\backend\LocationController;
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\frontend\ApplicantController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\JobslistController;
 use App\Http\Controllers\ProfileController;
@@ -35,12 +36,7 @@ Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/search', [JobslistController::class, 'search'])->name('search');
 
-
-
-// Route::get('front_register', [CandidateController::class, 'register'])->name('candidate_register');
-
-// Route::post('/process-register',[CandidateController::class,'processRegistration'])->name('processRegistration');
-
+Route::get('/job_details/{id}',[JobslistController::class,'jobDetail'])->name('jobDetail');
 
 
 Route::group(['prefix' => '/'],function(){
@@ -63,35 +59,17 @@ Route::group(['prefix' => '/'],function(){
         Route::get('profile_create', [CandidateController::class,'candidateCreate'])->name('profile_create');
          Route::post('profile_store', [CandidateController::class,'candidateStore'])->name('profile_store');
          Route::get('user_profile', [CandidateController::class,'user_profile'])->name('user_profile');
-         Route::get('editProfile',[CandidateController::class,'editProfile'])->name('editProfile');
-         Route::post('editProfile',[CandidateController::class,'updateProfile'])->name('updateProfile');
-
-//          Route::post('/updateProfile/{user}', [ProfileController::class, 'update'])->name('updateProfile');
-
-// Route::patch('/updateProfile/{user}', [ProfileController::class, 'update'])->name('updateProfile');
-
+       
+         Route::get('editProfile/{user}', [CandidateController::class, 'editProfile'])->name('editProfile');
+        Route::post('updateProfile/{user}', [CandidateController::class, 'updateProfile'])->name('updateProfile');
+        //Route::resource('applicant', ApplicantController::class);
+        Route::get('createApplicant/{jobId}', [HomeController::class, 'application_view'])->name('applicant.create');
+        Route::post('apply', [HomeController::class, 'application'])->name('apply.job');
+       // Route::get('job/{jobId}', [ApplicantController::class, 'showJob']);
 
     });
 
 });
-
-// Route::middleware('guest:user')->prefix('/')->group( function () {
-
-//     Route::get('front_register', [CandidateController::class, 'register'])->name('candidate_register');
-//     Route::post('front_register', [CandidateController::class, 'store']);
-
-//     Route::get('front_login', [CandidateController::class, 'login'])->name('candidate_login_form');
-//      Route::post('authenticate',[CandidateController::class,'authenticate'])->name('authenticate');  
-
-// });
-
-// Route::middleware('auth:user')->prefix('/')->group( function () {
-
-//     Route::get('profile_setting', [HomeController::class, 'profile_setting'])->name('profile_setting');
-//     Route::get('logout',[CandidateController::class,'logout'])->name('user_logout');
-
-
-// });
 
 //Admin Dashboard
 
@@ -118,7 +96,6 @@ Route::middleware('guest:admin')->prefix('admin')->group( function () {
     Route::get('login', [App\Http\Controllers\Auth\Admin\LoginController::class, 'login'])->name('admin.login');
     Route::post('login', [App\Http\Controllers\Auth\Admin\LoginController::class, 'check_user']);
 
-
 });
 
 Route::middleware('auth:admin')->prefix('admin')->group( function () {
@@ -135,7 +112,6 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::get('/report-form', [AdminController::class, 'showReportForm'])->name('admin.report.form');
     Route::get('/report', [AdminController::class, 'generateReport'])->name('admin.report');
 
-
 });
 
 //Doctor routes
@@ -147,8 +123,6 @@ Route::middleware('guest:employeer')->prefix('employeer')->group( function () {
 
     Route::get('register', [App\Http\Controllers\Auth\Employeer\RegisterController::class, 'create'])->name('employeer.register');
     Route::post('register', [App\Http\Controllers\Auth\Employeer\RegisterController::class, 'store']);
-
-    
 
 });
 

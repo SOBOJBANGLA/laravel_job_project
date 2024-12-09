@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Applicant;
 use App\Models\Company;
 use App\Models\Job;
 use Illuminate\Http\Request;
@@ -34,6 +35,46 @@ class HomeController extends Controller
        
         return view('frontend.profile_setting');
     }
+
+
+    public function application_view($jobId)
+    {
+        $job = Job::find($jobId);
+        return view('frontend.applicant', compact('job'));
+    }
+
+    public function application(Request $request){
+
+        $request->validate([
+            'pdf' => 'required|mimes:pdf|max:2048',
+            
+        ]);
+        //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+        if ($bio = $request->file('pdf')) {
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $bio->getClientOriginalExtension();
+            $bio->move($destinationPath, $postImage);
+            $bio = $destinationPath.$postImage;
+        }
+    
+        // $id=Auth::user()->id;
+        // $candidate=CandidateDetails::find($id);
+         $applicant=new Applicant;
+         $applicant->name=$request->name;
+         $applicant->email=$request->email;
+         $applicant->contact=$request->contact;
+         $applicant->cv=$bio;
+         $applicant->candidate_id=$request->candidate_id;
+         $applicant->job_id=$request->job_id;
+         $applicant->employeer_id	=$request->employeer_id;
+         $applicant->save();
+        //return redirect('admin/specialist');
+        return redirect()->back()->with('msg',"Successfully Apply");
+
+
+    }
+    
 
     
 }

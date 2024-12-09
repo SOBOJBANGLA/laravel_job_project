@@ -27,8 +27,10 @@
                                 <p class="text-muted mb-0">Web Designer</p>
                             </div>
                         </div>
-
-                        <a href="{{ route('editProfile') }}" class="btn btn-sm btn-icon btn-pills btn-soft-primary"><i data-feather="settings" class="icons"></i></a>
+                        @foreach(Auth::guard()->user()->candidateDetails as $detail)
+                        <a href="{{ route('editProfile', $detail->user_id) }}" class="btn btn-sm btn-icon btn-pills btn-soft-primary"> <i data-feather="settings" class="icons"></i> </a>
+                        @endforeach
+                        {{-- <a href="{{ route('editProfile') }}" class="btn btn-sm btn-icon btn-pills btn-soft-primary"><i data-feather="settings" class="icons"></i></a> --}}
                         {{-- <a href="{{route('employeer.edit',$item->id)}}" class="btn btn-info">Edit</a> --}}
                     </div>
                 </div>
@@ -39,7 +41,7 @@
 
     <div class="container mt-4">
         <div class="row g-4">
-            @foreach ($items as $item)
+            @foreach ($candidate as $item)
             <div class="col-lg-8 col-md-7 col-12">
                 <h5 class="mb-4">Introduction:</h5>
 
