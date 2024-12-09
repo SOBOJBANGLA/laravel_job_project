@@ -7,6 +7,7 @@ use App\Models\Applicant;
 use App\Models\Company;
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -39,8 +40,11 @@ class HomeController extends Controller
 
     public function application_view($jobId)
     {
+        $userId = Auth::id();
         $job = Job::find($jobId);
-        return view('frontend.applicant', compact('job'));
+        $application = Applicant::where('job_id', $jobId)->where('candidate_id', $userId)->first();
+
+        return view('frontend.applicant', compact('job','application'));
     }
 
     public function application(Request $request){
@@ -73,6 +77,14 @@ class HomeController extends Controller
         return redirect()->back()->with('msg',"Successfully Apply");
 
 
+    }
+
+    public function myJobs(Request $request){
+
+       $userId = Auth::id(); 
+         $items = Applicant::where('candidate_id', $userId)->get();
+        // dd($items);
+        return view('frontend.myjobs',compact('items'));
     }
     
 

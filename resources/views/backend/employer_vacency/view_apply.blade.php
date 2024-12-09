@@ -84,55 +84,22 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Job Title</th>
-                            <th>Company</th>
-                            <th>Location</th>
-                            <th>Category</th>
-                            <th>Job Type</th>
-                            <th>Vacancy</th>
-                            <th>Salary</th>
-                            <th>Description</th>
-                            <th>Benefit</th>
-                            <th>Responsibility</th>
-                            <th>Qualification</th>
-                            <th>Keyword</th>
-                            <th>Experience</th>
-                            <th>Company website	</th>
-                            <th>Job end date	</th>
-                            <th style="width: 280px;">Action</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>C.V</th>
                             
+                           
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($items as $item)
 													<tr>
 														<td>{{$loop->iteration}}</td>
-														<td>{{$item->title}}</td>
-														<td>{{$item->company->name}}</td>
-                                                        <td>{{$item->location->location_name}}</td>
-                                                        <td>{{$item->category->category_name}}</td>
-                                                        <td>{{$item->jobtype->jobtype_name}}</td>
-                                                        <td>{{$item->vacancy}}</td>
-                                                        <td>{{$item->salary}}</td>
-                                                        <td>{{$item->description}}</td>
-                                                        <td>{{$item->benefits}}</td>
-                                                        <td>{{$item->responsibility}}</td>
-                                                        <td>{{$item->qualifications}}</td>
-                                                        <td>{{$item->keywords}}</td>
-                                                        <td>{{$item->experience}}</td>
-                                                        <td>{{$item->company_website}}</td>
-                                                        <td>{{$item->job_end_date}}</td>
-														<td>
-                                                            
-                                                            <form action="{{route('vacancy.destroy',$item->id)}}" method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <a href="{{route('view.applicant',$item->id)}}" class="btn btn-success">View Applicant</a>
-                                                            <a href="{{route('vacancy.edit',$item->id)}}" class="btn btn-info">Edit</a>
-                                                            <button class="btn btn-danger" type="submit" name="submit">Delete</button>
-                                                            </form>
-                                                            </td>
-														
+														<td>{{$item->name}}</td>
+														<td>{{$item->email}}</td>
+                                                        <td>{{$item->contact}}</td>
+                                                        <td><a href="{{asset($item->cv)}}">CV</a></td>
 													</tr>
 													@endforeach
                        

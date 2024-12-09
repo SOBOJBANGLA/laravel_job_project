@@ -127,6 +127,7 @@
                                                             <form action="{{route('job.destroy',$item->id)}}" method="post">
                                                             @csrf
                                                             @method('DELETE')
+                                                            <a href="{{route('show.applicant',$item->id)}}" class="btn btn-success">View Applicant</a>
                                                             <a href="{{route('job.edit',$item->id)}}" class="btn btn-info">Edit</a>
                                                             <button class="btn btn-danger" type="submit" name="submit">Delete</button>
                                                             </form>

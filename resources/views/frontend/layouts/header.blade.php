@@ -105,7 +105,7 @@
                         <a href="{{ route('user_profile') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Profile</a>
                         <a href="{{ route('profile_setting') }}" class="dropdown-item fw-medium fs-6"><i data-feather="settings" class="fea icon-sm me-2 align-middle"></i>Settings</a>
                         <div class="dropdown-divider border-top"></div>
-                        <a href="lock-screen.html" class="dropdown-item fw-medium fs-6"><i data-feather="lock" class="fea icon-sm me-2 align-middle"></i>Lockscreen</a>
+                        <a href="{{ route('my_jobs') }}" class="dropdown-item fw-medium fs-6"><i data-feather="list" class="fea icon-sm me-2 align-middle"></i>My Jobs</a>
                         <a href="{{ route('user_logout') }}" class="dropdown-item fw-medium fs-6"><i data-feather="log-out" class="fea icon-sm me-2 align-middle"></i>Logout</a>
                     </div>
                 </div>

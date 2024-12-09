@@ -88,7 +88,13 @@
                         </div><!--end row-->
                         <div class="row">
                             <div class="col-12">
+                                @if(Auth::check())
+                                @if ($application)
+                                <button class="btn btn-danger mr-15">Already Applied</button>
+                            @else
                                 <input type="submit" id="submit2" name="send" class="submitBnt btn btn-primary" value="Apply Now">
+                                @endif
+                            @endif
                             </div><!--end col-->
                         </div><!--end row-->
                         @endif

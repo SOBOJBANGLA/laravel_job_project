@@ -59,7 +59,8 @@ Route::group(['prefix' => '/'],function(){
         Route::get('profile_create', [CandidateController::class,'candidateCreate'])->name('profile_create');
          Route::post('profile_store', [CandidateController::class,'candidateStore'])->name('profile_store');
          Route::get('user_profile', [CandidateController::class,'user_profile'])->name('user_profile');
-       
+         Route::get('my_jobs', [HomeController::class, 'myJobs'])->name('my_jobs');
+
          Route::get('editProfile/{user}', [CandidateController::class, 'editProfile'])->name('editProfile');
         Route::post('updateProfile/{user}', [CandidateController::class, 'updateProfile'])->name('updateProfile');
         //Route::resource('applicant', ApplicantController::class);
@@ -70,6 +71,9 @@ Route::group(['prefix' => '/'],function(){
     });
 
 });
+
+
+
 
 //Admin Dashboard
 
@@ -111,6 +115,7 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::resource('/employeer',EmployeerController::class);
     Route::get('/report-form', [AdminController::class, 'showReportForm'])->name('admin.report.form');
     Route::get('/report', [AdminController::class, 'generateReport'])->name('admin.report');
+    Route::get('/view_applicant/{jobId}/applicants', [AdminController::class, 'viewApplicant'])->name('show.applicant');
 
 });
 
@@ -131,6 +136,8 @@ Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
     Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofilestore'])->name('employeer.profile.store');
     Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'changepasswordstore'])->name('employeer.profile.store');
     Route::resource('/vacancy',VacancyController::class);
+    Route::get('/view_apply/{jobId}/applicant', [AdminController::class, 'employeeViewApplicant'])->name('view.applicant');
+   
     Route::post('logout', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'logout'])->name('employeer.logout');
     
     Route::view('/dashboard','backend.employeer_dashboard');

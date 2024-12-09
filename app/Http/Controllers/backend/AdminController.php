@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Applicant;
 use App\Models\Company;
+use App\Models\Job;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -20,6 +24,24 @@ class AdminController extends Controller
         return view('backend.admin.report', compact('company', 'jobs')); 
     
     }
+
+
+    public function viewApplicant($jobId) { 
+
+        $job = Job::findOrFail($jobId); 
+        $items = Applicant::where('job_id', $jobId)->get();
+        return view('backend.job.view_applicant',compact('items','job')); 
+        
+     }
+
+     public function employeeViewApplicant($jobId) { 
+        $job = Job::findOrFail($jobId); 
+        $items = Applicant::where('job_id', $jobId)->get();
+        
+        return view('backend.employer_vacency.view_apply',compact('items','job')); 
+        
+     }
+
 
     
 }
