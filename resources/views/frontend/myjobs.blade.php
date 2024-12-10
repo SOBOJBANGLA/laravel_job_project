@@ -55,6 +55,10 @@
                         <span class="text-muted d-flex align-items-center"><i data-feather="map-pin" class="fea icon-sm me-1 align-middle"></i>{{$item->job->location->location_name}}</span>
                         <span class="d-flex fw-medium mt-md-2">{{$item->job->salary}}</span>
                     </div>
+
+                    <div class="mt-3 mt-md-0">
+                        <span class="d-flex fw-medium mt-md-2" style="color: @if($item->status == 'Apply Approved') green @elseif ($item->status == 'Apply Decline') red @else blue @endif ;">{{$item->status}}</span>
+                    </div>
                 </div>
             </div><!--end col-->
 

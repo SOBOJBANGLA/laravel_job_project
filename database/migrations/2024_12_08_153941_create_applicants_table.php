@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('candidate_id');
             $table->integer('job_id');
             $table->integer('employeer_id');
-            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

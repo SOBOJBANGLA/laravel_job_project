@@ -88,20 +88,31 @@
                             <th>Email</th>
                             <th>Contact</th>
                             <th>C.V</th>
-                            
+                            <th>Action</th>
                            
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($items as $item)
-													<tr>
-														<td>{{$loop->iteration}}</td>
-														<td>{{$item->name}}</td>
-														<td>{{$item->email}}</td>
-                                                        <td>{{$item->contact}}</td>
-                                                        <td><a href="{{asset($item->cv)}}">CV</a></td>
-													</tr>
-													@endforeach
+							<tr>
+								<td>{{$loop->iteration}}</td>
+								<td>{{$item->name}}</td>
+								<td>{{$item->email}}</td>
+                                <td>{{$item->contact}}</td>
+                                <td><a href="{{asset($item->cv)}}">CV</a></td>
+                                <td>
+                                <form action="{{ route('employee.updateApplicantStatus', $item->id) }}" method="POST">
+                                    @csrf 
+                                   <select name="status"> 
+                                    <option value="Apply Approved" {{ $item->status == 'Apply Approved' ? 'selected' : '' }}>Approved</option> 
+                                    <option value="Apply Decline" {{ $item->status == 'Apply Decline' ? 'selected' : '' }}>Decline</option> 
+                                   <option value="Apply Pending" {{ $item->status == 'Apply Pending' ? 'selected' : '' }}>Pending</option> 
+                                   </select>
+                                    <button type="submit">Update</button> 
+                                   </form>
+                                </td>
+							</tr>
+						@endforeach
                        
                     </tbody>
                 </table>

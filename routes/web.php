@@ -34,7 +34,7 @@ Route::get('jobs', [JobslistController::class, 'index'])->name('jobs');
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('blog', [HomeController::class, 'blog'])->name('blog');
-Route::get('/search', [JobslistController::class, 'search'])->name('search');
+Route::get('/jobs/search', [JobslistController::class, 'search'])->name('search');
 
 Route::get('/job_details/{id}',[JobslistController::class,'jobDetail'])->name('jobDetail');
 
@@ -137,6 +137,7 @@ Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
     Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'changepasswordstore'])->name('employeer.profile.store');
     Route::resource('/vacancy',VacancyController::class);
     Route::get('/view_apply/{jobId}/applicant', [AdminController::class, 'employeeViewApplicant'])->name('view.applicant');
+    Route::post('/view_apply/{applicantId}/update-status', [AdminController::class, 'updateApplicantStatus'])->name('employee.updateApplicantStatus');
    
     Route::post('logout', [App\Http\Controllers\Auth\Employeer\LoginController::class, 'logout'])->name('employeer.logout');
     

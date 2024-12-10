@@ -71,7 +71,7 @@ class HomeController extends Controller
          $applicant->cv=$bio;
          $applicant->candidate_id=$request->candidate_id;
          $applicant->job_id=$request->job_id;
-         $applicant->employeer_id	=$request->employeer_id;
+         $applicant->employeer_id=$request->employeer_id;
          $applicant->save();
         //return redirect('admin/specialist');
         return redirect()->back()->with('msg',"Successfully Apply");

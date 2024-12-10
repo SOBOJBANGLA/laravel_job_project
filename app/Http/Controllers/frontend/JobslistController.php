@@ -15,7 +15,7 @@ class JobslistController extends Controller
         $jobtypes = Jobtype::all();
         $locations = Location::all();
         $categories = Category::all();
-        $jobs=Job::orderBy('id','desc')->get();
+        $jobs=Job::orderBy('id','desc')->paginate(5);
         //$jobs=Job::orderBy('id','desc')->latest()->paginate(5);
         
         // ->paginate(5)
@@ -39,7 +39,7 @@ class JobslistController extends Controller
          ->where('category_id', 'LIKE', "%{$category}%")
          ->where('location_id', 'LIKE', "%{$location}%")
          ->where('jobtype_id', 'LIKE', "%{$jobtype}%")
-         ->get();
+         ->paginate(5);
         //  ->paginate(5)
          
 

@@ -42,6 +42,13 @@ class AdminController extends Controller
         
      }
 
+     public function updateApplicantStatus(Request $request, $applicantId) { 
+        $applicant = Applicant::findOrFail($applicantId); 
+        $applicant->status = $request->input('status'); 
+        $applicant->save();  
+        return redirect()->back()->with('success', 'Applicant status updated successfully!'); 
+        }
+
 
     
 }

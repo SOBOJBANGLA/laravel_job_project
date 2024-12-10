@@ -3,7 +3,7 @@
 @section('title','Jobs')
 
 @section('content')
-<section class="bg-half-170 d-table w-100" style="background: url('images/hero/bg.jpg');">
+<section class="bg-half-170 d-table w-100" style="background: url({{asset('images/hero/bg.jpg') }});">
     <div class="bg-overlay bg-gradient-overlay"></div>
     <div class="container">
         <div class="row mt-5 justify-content-center">
@@ -123,7 +123,7 @@
                     <div class="col-12">
                         <div class="job-post job-post-list rounded shadow p-4 d-md-flex align-items-center justify-content-between position-relative">
                             <div class="d-flex align-items-center w-250px">
-                                <img src="images/company/job.jpg" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
+                                <img src="{{ asset('images/company/job.jpg') }}" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
 
                                 <div class="ms-3">
                                     <a href="job-detail-one.html" class="h5 title text-dark">{{$item->title}}</a>
@@ -160,23 +160,9 @@
                 <div class="row">
                     <div class="col-12 mt-4 pt-2">
                         {{-- {{ $jobs->withQueryString()->links() }} --}}
-                         
+                        {{ $jobs->links() }}
      {{-- {{ $jobs->withQueryString()->links() }} --}}
-                        <ul class="pagination justify-content-center mb-0">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="mdi mdi-chevron-left fs-6"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="mdi mdi-chevron-right fs-6"></i></span>
-                                </a>
-                            </li>
-                        </ul>
+                       
                     </div><!--end col-->
                 </div><!--end row-->
             </div>
