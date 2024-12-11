@@ -271,7 +271,7 @@
 
                   <div class="mt-3 mt-md-0">
                       <a href="" class="btn btn-sm btn-icon btn-pills btn-soft-primary bookmark"><i data-feather="bookmark" class="icons"></i></a>
-                      <a href="job-detail-one.html" class="btn btn-sm btn-primary w-full ms-md-1">Apply Now</a>
+                      <a href="{{ route('jobDetail',$item->id) }}" class="btn btn-sm btn-primary w-full ms-md-1">Apply Now</a>
                   </div>
               </div>
           </div><!--end col-->

@@ -13,7 +13,10 @@ class HomeController extends Controller
 {
     public function index(Request $request){
         $companies=Company::orderBy('id','desc')->get();
-        $jobs=Job::orderBy('id','desc')->get();
+       // $jobs=Job::orderBy('id','desc')->get();
+       $jobs = Job::where('status',1)
+                        ->orderBy('id','desc')
+                        ->where('isFeatured',1)->take(6)->get();
         return view('frontend.home',compact('jobs','companies'));
     }
 

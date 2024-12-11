@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2024 at 02:49 AM
+-- Generation Time: Dec 11, 2024 at 05:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -59,7 +59,7 @@ CREATE TABLE `applicants` (
   `candidate_id` int(11) NOT NULL,
   `job_id` int(11) NOT NULL,
   `employeer_id` int(11) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `status` varchar(255) NOT NULL DEFAULT 'Apply Pending',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -69,9 +69,15 @@ CREATE TABLE `applicants` (
 --
 
 INSERT INTO `applicants` (`id`, `name`, `email`, `contact`, `cv`, `candidate_id`, `job_id`, `employeer_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'A.S.M Abdullah', 'asm@gmail.com', '1234567895', 'images/20241209013250.pdf', 5, 7, 15, 0, '2024-12-08 19:32:50', '2024-12-08 19:32:50'),
-(2, 'A.S.M Abdullah', 'asm@gmail.com', '1234567895', 'images/20241209014048.pdf', 5, 10, 15, 0, '2024-12-08 19:40:48', '2024-12-08 19:40:48'),
-(3, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209014756.pdf', 1, 11, 15, 0, '2024-12-08 19:47:56', '2024-12-08 19:47:56');
+(3, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209014756.pdf', 1, 11, 15, 'Apply Decline', '2024-12-08 19:47:56', '2024-12-09 23:57:13'),
+(4, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209122903.pdf', 5, 7, 15, 'Apply Approved', '2024-12-09 06:29:03', '2024-12-09 23:42:48'),
+(5, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209124449.pdf', 5, 12, 15, 'pending', '2024-12-09 06:44:49', '2024-12-09 06:44:49'),
+(6, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209125104.pdf', 5, 9, 9, 'pending', '2024-12-09 06:51:04', '2024-12-09 06:51:04'),
+(7, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209141600.pdf', 5, 10, 15, 'Apply Approved', '2024-12-09 08:16:00', '2024-12-09 23:59:22'),
+(8, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209141722.pdf', 1, 8, 15, 'pending', '2024-12-09 08:17:22', '2024-12-09 08:17:22'),
+(9, 'Hasib Ahmed', 'hasib@gmail.com', '012546789', 'images/20241209164810.pdf', 2, 7, 15, 'Pending Apply', '2024-12-09 10:48:10', '2024-12-09 23:15:19'),
+(10, 'Noman Abdullah', 'noman@gmail.com', '215455', 'images/20241209182037.pdf', 7, 6, 6, 'pending', '2024-12-09 12:20:37', '2024-12-09 12:20:37'),
+(11, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241211135643.pdf', 1, 13, 15, 'Apply Approved', '2024-12-11 07:56:43', '2024-12-11 07:58:24');
 
 -- --------------------------------------------------------
 
@@ -101,7 +107,7 @@ CREATE TABLE `candidate_details` (
 
 INSERT INTO `candidate_details` (`id`, `f_name`, `l_name`, `occupation`, `phone`, `address`, `about`, `image`, `bio`, `user_id`, `status`, `created_at`, `updated_at`) VALUES
 (6, 'MD.', 'Yousuf Mollah', 'WD', NULL, 'Dhaka,Bangladesh', 'aaaaaaaaaaaaa', 'images/20241207171556.jpg', 'images/20241207171556.pdf', 3, 1, '2024-12-07 11:15:56', '2024-12-07 11:15:56'),
-(10, 'Hasib', 'Ahmed', 'WD', '012546789', 'Dhaka', 'dddddddddd', 'images/nophoto.jpg', 'images/20241207175039.pdf', 2, 1, '2024-12-07 11:50:39', '2024-12-07 11:50:39'),
+(10, 'Hasib', 'Ahmed', 'WD', '012546789', 'Dhaka', 'dddddddddd', 'images/20241209164733.jpg', 'images/20241207175039.pdf', 2, 1, '2024-12-07 11:50:39', '2024-12-09 10:47:33'),
 (12, 'Kabir', 'Ahmed', 'WD', '01624632072', 'jjjjjjjjjjjjjjjjj', 'llllllllllllllllllllllll', 'images/20241207180024.jpg', 'images/20241207180024.pdf', 4, 1, '2024-12-07 12:00:24', '2024-12-07 12:00:24'),
 (13, 'Masud', 'Kamal', 'WD', '02154699777', 'ggggggggggggg', 'ddddddddddddddrr', 'images/20241208121154.jpg', 'documents/20241208121154.pdf', 5, 1, '2024-12-07 12:28:50', '2024-12-08 06:11:54'),
 (14, 'Kawsar', 'Ahmed', 'WD', '012345678', 'ggggggggggggg', 'hhhhhhhhhhhh', 'images/20241208115701.jpg', 'documents/20241208115701.pdf', 6, 1, '2024-12-08 05:21:06', '2024-12-08 05:57:01'),
@@ -233,6 +239,8 @@ CREATE TABLE `jobs` (
   `experience` varchar(255) NOT NULL,
   `company_website` varchar(255) DEFAULT NULL,
   `job_end_date` datetime NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `isFeatured` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -241,16 +249,18 @@ CREATE TABLE `jobs` (
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `title`, `employeer_id`, `company_id`, `location_id`, `category_id`, `jobtype_id`, `vacancy`, `salary`, `description`, `benefits`, `responsibility`, `qualifications`, `keywords`, `experience`, `company_website`, `job_end_date`, `created_at`, `updated_at`) VALUES
-(1, 'Senior Officer', 3, 1, 1, 1, 1, 5, '20000', 'ddddddddd', 'bbbbbbbbbb', 'rrrrrrrrrrr', 'qqqqqqqqqqq', 'kkkkkkkkk', '2 Years', 'www.city.ltd', '2024-12-16 00:00:00', '2024-12-01 05:06:58', '2024-12-02 06:27:42'),
-(4, 'Cashier', 18, 4, 1, 1, 1, 2, '20000', 'dddddddddddddd', 'bbbbbbbbbbbbbb', 'ddddddd', 'qqqqqqqqqqqq', 'kkkkkkkkkkkkkkk', '2 Years', 'www.fff.com', '2024-12-10 00:00:00', '2024-12-03 08:41:24', '2024-12-03 09:58:37'),
-(6, 'Sr.Officer', 6, 4, 1, 2, 1, 5, '25000', 'ttttt', 'eeee', 'yyyyyy', 'uuuuuuu', 'ooooooo', '2', 'www.hhee.com', '2024-12-09 00:00:00', '2024-12-03 10:42:03', '2024-12-03 10:42:03'),
-(7, 'Headmaster', 15, 7, 5, 3, 1, 1, '27000', 'rrrrr', 'tttt', 'yyyyy', 'aaaa', 'ddd', '2', 'www.mordern.school', '2024-12-16 00:00:00', '2024-12-03 10:46:58', '2024-12-03 10:49:00'),
-(8, 'Teacher(Bangla)', 15, 7, 5, 3, 1, 2, '20000', 'eeee', 'rrrrrr', 'wwww', 'ddddd', 'eeeeee', '2', 'www.hhh.com', '2024-12-24 00:00:00', '2024-12-03 10:50:17', '2024-12-03 10:50:17'),
-(9, 'Cashier', 9, 6, 3, 1, 1, 2, '20000', 'ddddd', 'bbb', 'rrrrrrr', 'qqqqq', 'kkkk', '2 Years', 'www.fff.com', '2024-12-16 00:00:00', '2024-12-03 12:34:32', '2024-12-03 12:34:32'),
-(10, 'Junior Developer', 15, 5, 4, 4, 2, 2, '20000', 'sssssssssss', 'bbbbbbbbbbb', 'rrrrrrrrrrrrrrr', 'qqqqqqqqqqqqqqq', 'kkkkkkkkkkkkkk', '0', 'www.jakir.com', '2024-12-18 00:00:00', '2024-12-05 21:37:38', '2024-12-05 21:37:38'),
-(11, 'Senior Developer', 15, 5, 2, 4, 4, 15, '25000', 'ffffffff', 'tttttttttt', 'eeeeeeeeee', 'qqqqqqqqqqq', 'fffffffffffff', '2', 'www.jakir.com', '2024-12-27 00:00:00', '2024-12-05 21:42:11', '2024-12-05 21:42:11'),
-(12, 'Senior Developer', 15, 5, 4, 4, 1, 2, '40000', 'fffffffffff', 'eeeeeeeeee', 'ttttttttt', 'wwwwwwwww', 'tyyyyyyyyy', '2', 'www.jakir.com', '2024-12-22 00:00:00', '2024-12-05 21:45:54', '2024-12-05 21:45:54');
+INSERT INTO `jobs` (`id`, `title`, `employeer_id`, `company_id`, `location_id`, `category_id`, `jobtype_id`, `vacancy`, `salary`, `description`, `benefits`, `responsibility`, `qualifications`, `keywords`, `experience`, `company_website`, `job_end_date`, `status`, `isFeatured`, `created_at`, `updated_at`) VALUES
+(1, 'Senior Officer', 3, 1, 1, 1, 1, 5, '20000', 'ddddddddd', 'bbbbbbbbbb', 'rrrrrrrrrrr', 'qqqqqqqqqqq', 'kkkkkkkkk', '2 Years', 'www.city.ltd', '2024-12-16 00:00:00', 1, 0, '2024-12-01 05:06:58', '2024-12-02 06:27:42'),
+(4, 'Cashier', 18, 4, 1, 1, 1, 2, '20000', 'dddddddddddddd', 'bbbbbbbbbbbbbb', 'ddddddd', 'qqqqqqqqqqqq', 'kkkkkkkkkkkkkkk', '2 Years', 'www.fff.com', '2024-12-10 00:00:00', 1, 0, '2024-12-03 08:41:24', '2024-12-03 09:58:37'),
+(6, 'Sr.Officer', 6, 4, 1, 2, 1, 5, '25000', 'ttttt', 'eeee', 'yyyyyy', 'uuuuuuu', 'ooooooo', '2', 'www.hhee.com', '2024-12-09 00:00:00', 1, 0, '2024-12-03 10:42:03', '2024-12-03 10:42:03'),
+(7, 'Headmaster', 15, 7, 5, 3, 1, 1, '27000', 'rrrrr', 'tttt', 'yyyyy', 'aaaa', 'ddd', '2', 'www.mordern.school', '2024-12-16 00:00:00', 1, 0, '2024-12-03 10:46:58', '2024-12-03 10:49:00'),
+(8, 'Teacher(Bangla)', 15, 7, 5, 3, 1, 2, '20000', 'eeee', 'rrrrrr', 'wwww', 'ddddd', 'eeeeee', '2', 'www.hhh.com', '2024-12-24 00:00:00', 1, 0, '2024-12-03 10:50:17', '2024-12-03 10:50:17'),
+(9, 'Cashier', 9, 6, 3, 1, 1, 2, '20000', 'ddddd', 'bbb', 'rrrrrrr', 'qqqqq', 'kkkk', '2 Years', 'www.fff.com', '2024-12-16 00:00:00', 1, 0, '2024-12-03 12:34:32', '2024-12-03 12:34:32'),
+(10, 'Junior Developer', 15, 5, 4, 4, 2, 2, '20000', 'sssssssssss', 'bbbbbbbbbbb', 'rrrrrrrrrrrrrrr', 'qqqqqqqqqqqqqqq', 'kkkkkkkkkkkkkk', '0', 'www.jakir.com', '2024-12-18 00:00:00', 1, 0, '2024-12-05 21:37:38', '2024-12-05 21:37:38'),
+(11, 'Senior Developer', 15, 5, 2, 4, 4, 15, '25000', 'ffffffff', 'tttttttttt', 'eeeeeeeeee', 'qqqqqqqqqqq', 'fffffffffffff', '2', 'www.jakir.com', '2024-12-27 00:00:00', 1, 0, '2024-12-05 21:42:11', '2024-12-05 21:42:11'),
+(12, 'Senior Developer', 15, 5, 4, 4, 1, 2, '40000', 'fffffffffff', 'eeeeeeeeee', 'ttttttttt', 'wwwwwwwww', 'tyyyyyyyyy', '2', 'www.jakir.com', '2024-12-25 00:00:00', 1, 1, '2024-12-05 21:45:54', '2024-12-11 07:41:47'),
+(13, 'Teacher(English)', 15, 5, 2, 3, 1, 6, '21000', 'fffffffffff', 'gggggggggg', 'rrrrrrrrrrrrr', 'wwwwwwwwwwwwww', 'eeeeee', '2 Year', 'www.jakir.com', '2024-12-24 00:00:00', 1, 1, '2024-12-11 07:45:23', '2024-12-11 07:48:57'),
+(14, 'Junior operator', 15, 5, 1, 2, 1, 2, '12000', 'ggggg', 'ttt', 'yyyyyy', 'uuuuuuuu', 'rrrrrrrr', '2 Years', 'www.jakir.com', '2024-12-24 00:00:00', 0, 1, '2024-12-11 07:50:24', '2024-12-11 07:51:36');
 
 -- --------------------------------------------------------
 
@@ -331,7 +341,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (31, '2024_11_29_060605_create_locations_table', 6),
 (32, '2024_12_03_140842_alter_jobs_table', 7),
 (33, '2024_12_07_115709_create_candidate_details_table', 8),
-(34, '2024_12_08_153941_create_applicants_table', 9);
+(34, '2024_12_08_153941_create_applicants_table', 9),
+(35, '2024_12_10_041828_alter_applicants_table', 10),
+(36, '2024_12_11_131955_alter_jobs_table', 11);
 
 -- --------------------------------------------------------
 
@@ -502,7 +514,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `applicants`
 --
 ALTER TABLE `applicants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `candidate_details`
@@ -538,7 +550,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `jobtypes`
@@ -556,7 +568,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

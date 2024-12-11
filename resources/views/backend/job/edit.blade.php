@@ -97,6 +97,32 @@
                         </select>
                     </div>
 
+                    <div class="row">
+                                
+                        <div class="mb-4 col-md-6">
+                            <div class="form-check">
+                                <input {{ ($job->isFeatured == 1) ? 'checked' : '' }} class="form-check-input" type="checkbox" value="1" id="isFeatured" name="isFeatured">
+                                <label class="form-check-label" for="isFeatured">
+                                    Featured
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-4 col-md-6">
+                            <div class="form-check-inline">
+                                <input {{ ($job->status == 1) ? 'checked' : '' }} class="form-check-input" type="radio" value="1" id="status-active" name="status">
+                                <label class="form-check-label" for="status">
+                                    Active
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input {{ ($job->status == 0) ? 'checked' : '' }} class="form-check-input" type="radio" value="0" id="status-block" name="status">
+                                <label class="form-check-label" for="status">
+                                    Block
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Vacancy</label>
                         <input type="text" name="vacancy" value="{{old('vacancy')??$job->vacancy}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Vacancy">

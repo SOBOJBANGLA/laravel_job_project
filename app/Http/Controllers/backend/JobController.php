@@ -126,6 +126,8 @@ class JobController extends Controller
         $job->experience=$request->experience;
         $job->company_website=$request->company_website;
         $job->job_end_date=$request->job_end_date;
+        $job->status = $request->status;
+        $job->isFeatured = (!empty($request->isFeatured)) ? $request->isFeatured : 0;
         $job->update();
         //return redirect('admin/specialist');
         return redirect()->route('job.index')->with('upt',"Successfully updated");
