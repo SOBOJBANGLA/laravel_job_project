@@ -119,6 +119,8 @@ Route::middleware('auth:admin')->prefix('admin')->group( function () {
     Route::get('/report-form', [AdminController::class, 'showReportForm'])->name('admin.report.form');
     Route::get('/report', [AdminController::class, 'generateReport'])->name('admin.report');
     Route::get('/view_applicant/{jobId}/applicants', [AdminController::class, 'viewApplicant'])->name('show.applicant');
+    Route::get('/user_contact', [AdminController::class, 'userContact'])->name('user_contact');
+    // Route::post('/user_contact/{id}', [AdminController::class, 'user_destroy'])->name('contact.destroy');
 
 });
 

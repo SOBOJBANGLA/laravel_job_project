@@ -3,7 +3,7 @@
 @section('title','Home Page')
 
 @section('content')
-<section class="bg-half-260 d-table w-100" style="background: url('images/hero/bg.jpg');">
+<section class="bg-half-260 d-table w-100" style="background: url('{{asset('images/hero/bg.jpg')}}');">
   <div class="bg-overlay bg-primary-gradient-overlay"></div>
   <div class="container">
       <div class="row mt-5 justify-content-center">
@@ -108,7 +108,7 @@
                       <div class="card features rounded shadow position-relative overflow-hidden m-2">
                           <div class="card-body p-0">
                               <div class="card-img">
-                                  <img src="images/work/01.jpg" class="img-fluid" alt="">
+                                  <img src="{{asset('images/work/01.jpg')}}" class="img-fluid" alt="">
                                   <div class="card-overlay"></div>
                               </div>
 
@@ -123,7 +123,7 @@
                       <div class="card features rounded shadow position-relative overflow-hidden m-2">
                           <div class="card-body p-0">
                               <div class="card-img">
-                                  <img src="images/work/02.jpg" class="img-fluid" alt="">
+                                  <img src="{{asset('images/work/02.jpg')}}" class="img-fluid" alt="">
                                   <div class="card-overlay"></div>
                               </div>
 
@@ -138,7 +138,7 @@
                       <div class="card features rounded shadow position-relative overflow-hidden m-2">
                           <div class="card-body p-0">
                               <div class="card-img">
-                                  <img src="images/work/03.jpg" class="img-fluid" alt="">
+                                  <img src="{{asset('images/work/03.jpg')}}" class="img-fluid" alt="">
                                   <div class="card-overlay"></div>
                               </div>
 
@@ -153,7 +153,7 @@
                       <div class="card features rounded shadow position-relative overflow-hidden m-2">
                           <div class="card-body p-0">
                               <div class="card-img">
-                                  <img src="images/work/04.jpg" class="img-fluid" alt="">
+                                  <img src="{{asset('images/work/04.jpg')}}" class="img-fluid" alt="">
                                   <div class="card-overlay"></div>
                               </div>
 
@@ -168,7 +168,7 @@
                       <div class="card features rounded shadow position-relative overflow-hidden m-2">
                           <div class="card-body p-0">
                               <div class="card-img">
-                                  <img src="images/work/05.jpg" class="img-fluid" alt="">
+                                  <img src="{{asset('images/work/05.jpg')}}" class="img-fluid" alt="">
                                   <div class="card-overlay"></div>
                               </div>
 
@@ -183,7 +183,7 @@
                       <div class="card features rounded shadow position-relative overflow-hidden m-2">
                           <div class="card-body p-0">
                               <div class="card-img">
-                                  <img src="images/work/06.jpg" class="img-fluid" alt="">
+                                  <img src="{{asset('images/work/06.jpg')}}" class="img-fluid" alt="">
                                   <div class="card-overlay"></div>
                               </div>
 
@@ -203,11 +203,11 @@
           <div class="col-lg-6 col-md-6 mb-5">
               <div class="about-left">
                   <div class="position-relative shadow rounded img-one">
-                      <img src="images/about/ab01.jpg" class="img-fluid rounded" alt="work-image">
+                      <img src="{{asset('images/about/ab01.jpg')}}" class="img-fluid rounded" alt="work-image">
                   </div>
 
                   <div class="img-two shadow rounded p-2 bg-white">
-                      <img src="images/about/ab02.jpg" class="img-fluid rounded" alt="work-image">
+                      <img src="{{asset('images/about/ab02.jpg')}}" class="img-fluid rounded" alt="work-image">
 
                       <div class="position-absolute top-0 start-50 translate-middle">
                           <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="avatar avatar-md-md rounded-pill shadow card d-flex justify-content-center align-items-center lightbox">
@@ -252,7 +252,7 @@
           <div class="col-12">
               <div class="job-post job-post-list rounded shadow p-4 d-md-flex align-items-center justify-content-between position-relative">
                   <div class="d-flex align-items-center w-310px">
-                      <img src="images/company/circle-logo.png" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
+                      <img src="{{asset('images/company/circle-logo.png')}}" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
 
                       <div class="ms-3">
                           <a href="job-detail-one.html" class="h5 title text-dark">{{$item->title}}</a>
@@ -291,11 +291,11 @@
           <div class="col-lg-6 col-md-6 mb-5  order-md-2 order-1">
               <div class="about-right">
                   <div class="position-relative shadow rounded img-one">
-                      <img src="images/about/ab03.jpg" class="img-fluid rounded" alt="work-image">
+                      <img src="{{asset('images/about/ab03.jpg')}}" class="img-fluid rounded" alt="work-image">
                   </div>
 
                   <div class="img-two shadow rounded p-2 bg-white">
-                      <img src="images/about/ab04.jpg" class="img-fluid rounded" alt="work-image">
+                      <img src="{{asset('images/about/ab04.jpg')}}" class="img-fluid rounded" alt="work-image">
 
                       <div class="position-absolute top-0 start-50 translate-middle">
                           <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="avatar avatar-md-md rounded-pill shadow card d-flex justify-content-center align-items-center lightbox">
@@ -317,7 +317,7 @@
                   <div class="col-md-6">
                       <div class="employer-card rounded shadow p-2 bg-light">
                           <div class="d-flex align-items-center">
-                              <img src="images/company/google-logo.png" class="avatar avatar-md-sm rounded shadow p-2 bg-white" alt="">
+                              <img src="{{asset('images/company/google-logo.png')}}" class="avatar avatar-md-sm rounded shadow p-2 bg-white" alt="">
 
                               <div class="content ms-3">
                                   <a href="employer-profile.html" class="h5 title text-dark">{{$item->name}}</a>
@@ -352,7 +352,7 @@
               <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                   <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                       <div class="position-relative overflow-hidden">
-                          <img src="images/blog/01.jpg" class="img-fluid" alt="">
+                          <img src="{{asset('images/blog/01.jpg')}}" class="img-fluid" alt="">
                           <div class="card-overlay"></div>
                       </div>
                   </div>
@@ -382,7 +382,7 @@
               <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                   <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                       <div class="position-relative overflow-hidden">
-                          <img src="images/blog/02.jpg" class="img-fluid" alt="">
+                          <img src="{{asset('images/blog/02.jpg')}}" class="img-fluid" alt="">
                           <div class="card-overlay"></div>
                       </div>
                   </div>
@@ -412,7 +412,7 @@
               <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                   <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                       <div class="position-relative overflow-hidden">
-                          <img src="images/blog/03.jpg" class="img-fluid" alt="">
+                          <img src="{{asset('images/blog/03.jpg')}}" class="img-fluid" alt="">
                           <div class="card-overlay"></div>
                       </div>
                   </div>

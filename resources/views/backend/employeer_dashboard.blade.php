@@ -58,7 +58,7 @@
 					</div>
 
 					<div class="card-body">
-						<img src="{{asset('images/welcone.jpg')}}" style="width: 100%">
+						<img src="{{asset('images/1.jfif')}}" style="width: 100%">
 					</div>
 				</div>
 			</div>

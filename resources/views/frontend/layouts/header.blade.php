@@ -69,10 +69,10 @@
     <div class="container">
         <a class="logo" href="/">
             <span class="logo-light-mode">
-                <img src="images/logo-dark.png" class="l-dark" alt="">
-                <img src="images/logo-light.png" class="l-light" alt="">
+                <img src="{{ asset('images/logo-dark.png') }}" class="l-dark" alt="">
+                <img src="{{ asset('images/logo-light.png') }}" class="l-light" alt="">
             </span>
-            <img src="images/logo-light.png" class="logo-dark-mode" alt="">
+            <img src="{{ asset('images/logo-light.png') }}" class="logo-dark-mode" alt="">
         </a>
   
         <div class="menu-extras">

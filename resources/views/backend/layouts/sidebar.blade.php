@@ -18,7 +18,7 @@
                         <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="24">
+                        <img src="{{ asset('assets/images/lg.png') }}" alt="" height="35">
                     </span>
                 </a>
             </div>
@@ -31,7 +31,7 @@
                     <a href="{{url('/admin/dashboard')}}">
                         <i data-feather="home"></i>
                         <span> Dashboard </span>
-                        <span class="menu-arrow"></span>
+                        {{-- <span class="menu-arrow"></span> --}}
                     </a>
                   
                 </li>
@@ -74,6 +74,14 @@
                           
                         </ul>
                     </div>
+                </li>
+
+                <li>
+                    <a href="{{ route('user_contact') }}" >
+                        <i data-feather="users"></i>
+                        <span> User Contact </span>
+                        
+                    </a>
                 </li>
 
                 <li>

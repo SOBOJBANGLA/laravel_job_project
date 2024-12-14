@@ -30,7 +30,7 @@
           <div class="row align-items-center">
               <div class="col-sm-6">
                   <div class="text-sm-start">
-                      <p class="mb-0 fw-medium">© <script>document.write(new Date().getFullYear())</script> Jobnova. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                      <p class="mb-0 fw-medium">© <script>document.write(new Date().getFullYear())</script> Jobnova. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">A.S.M ABDULLAH</a>.</p>
                   </div>
               </div>
 

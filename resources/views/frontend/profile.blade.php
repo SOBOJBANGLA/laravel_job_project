@@ -10,7 +10,7 @@
             <div class="col-12">
                 <div class="position-relative">
                     <div class="candidate-cover">
-                        <img src="images/hero/bg5.jpg" class="img-fluid rounded shadow" alt="">
+                        <img src="{{asset ('images/hero/bg5.jpg')}}" class="img-fluid rounded shadow" alt="">
                     </div>
                     <div class="candidate-profile d-flex align-items-end justify-content-between mx-2">
                         <div class="d-flex align-items-end">
@@ -114,7 +114,7 @@
                     <div class="col-12 mt-4">
                         <div class="d-flex">
                             <div class="text-center">
-                                <img src="images/company/linkedin.png" class="avatar avatar-small bg-white shadow p-2 rounded" alt="">
+                                <img src="{{asset ('images/company/linkedin.png')}}" class="avatar avatar-small bg-white shadow p-2 rounded" alt="">
                                 <h6 class="text-muted mt-2 mb-0">2019-22</h6>
                             </div>
 
@@ -129,7 +129,7 @@
                     <div class="col-12 mt-4">
                         <div class="d-flex">
                             <div class="text-center">
-                                <img src="images/company/lenovo-logo.png" class="avatar avatar-small bg-white shadow p-2 rounded" alt="">
+                                <img src="{{asset ('images/company/lenovo-logo.png')}}" class="avatar avatar-small bg-white shadow p-2 rounded" alt="">
                                 <h6 class="text-muted mt-2 mb-0">2017-19</h6>
                             </div>
 
@@ -267,7 +267,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
                 <div class="candidate-card position-relative overflow-hidden text-center shadow rounded p-4">
                     <div class="content">
-                        <img src="images/team/02.jpg" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
+                        <img src="{{asset ('images/team/02.jpg')}}" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
 
                         <div class="mt-3">
                             <a href="candidate-profile.html" class="title h5 text-dark">Tiffany Betancourt</a>
@@ -304,7 +304,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
                 <div class="candidate-card position-relative overflow-hidden text-center shadow rounded p-4">
                     <div class="content">
-                        <img src="images/team/03.jpg" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
+                        <img src="{{asset ('images/team/03.jpg')}}" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
 
                         <div class="mt-3">
                             <a href="candidate-profile.html" class="title h5 text-dark">Jacqueline Burns</a>
@@ -342,7 +342,7 @@
                 <div class="candidate-card position-relative overflow-hidden text-center shadow rounded p-4">
                     <div class="ribbon ribbon-left overflow-hidden"><span class="text-center d-block bg-warning shadow small h6"><i class="mdi mdi-star"></i></span></div>
                     <div class="content">
-                        <img src="images/team/04.jpg" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
+                        <img src="{{asset ('images/team/04.jpg')}}" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
 
                         <div class="mt-3">
                             <a href="candidate-profile.html" class="title h5 text-dark">Mari Harrington</a>
@@ -379,7 +379,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4 pt-2">
                 <div class="candidate-card position-relative overflow-hidden text-center shadow rounded p-4">
                     <div class="content">
-                        <img src="images/team/05.jpg" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
+                        <img src="{{asset ('images/team/05.jpg')}}" class="avatar avatar-md-md rounded-pill shadow-md" alt="">
 
                         <div class="mt-3">
                             <a href="candidate-profile.html" class="title h5 text-dark">Floyd Glasgow</a>

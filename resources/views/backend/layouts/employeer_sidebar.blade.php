@@ -18,7 +18,7 @@
                         <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="24">
+                        <img src="{{ asset('assets/images/lg.png') }}" alt="" height="35">
                     </span>
                 </a>
             </div>
@@ -57,7 +57,7 @@
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarError" data-bs-toggle="collapse">
                         <i data-feather="alert-octagon"></i>
                         <span> Error Pages </span>
@@ -127,7 +127,7 @@
     
                
 
-                <li class="menu-title mt-2">General</li>
+                <li class="menu-title mt-2">General</li> --}}
     
                 
 

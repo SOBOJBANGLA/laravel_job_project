@@ -9,7 +9,7 @@
         <div class="row mt-5 justify-content-center">
             <div class="col-12">
                 <div class="title-heading text-center">
-                <img src="{{ asset('images/company/lenovo-logo.png') }}" class="avatar avatar-small rounded-pill p-2 bg-white" alt="">
+                <img src="{{ asset('images/company/circle-logo.png') }}" class="avatar avatar-small rounded-pill p-2 bg-white" alt="">
                 <h5 class="heading fw-semibold mb-0 sub-heading text-white title-dark mt-3">{{ $job->title }}</h5>
                 </div>
             </div><!--end col-->

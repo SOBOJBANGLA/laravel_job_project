@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Jobnova - Job Board & Job Portal Bootstrap 5 Template</title>
+	    <title>Jobhub - Job Board & Job Portal</title>
 	    <meta name="description" content="Job Listing Bootstrap 5 Template" />
 	    <meta name="keywords" content="Onepage, creative, modern, bootstrap 5, multipurpose, clean, Job Listing, Job Board, Job, Job Portal" />
 	    <meta name="author" content="Shreethemes" />

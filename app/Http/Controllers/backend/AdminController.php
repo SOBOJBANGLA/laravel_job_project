@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\Applicant;
 use App\Models\Company;
+use App\Models\Contact;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -48,6 +49,17 @@ class AdminController extends Controller
         $applicant->save();  
         return redirect()->back()->with('success', 'Applicant status updated successfully!'); 
         }
+
+        public function userContact() { 
+            $items = Contact::all(); 
+            return view('backend.admin.user_contact', compact('items'));
+         }
+
+        //  public function user_destroy(Contact $contact)
+        //  {
+        //      $contact->delete();
+        //      return redirect()->route('user_contact')->with('msg',"Successfully delete");
+        //  }
 
 
     

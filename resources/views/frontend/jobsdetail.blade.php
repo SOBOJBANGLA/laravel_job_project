@@ -10,7 +10,7 @@
             <div class="col-lg-8 col-md-6 col-12">
 
                 <div class="d-lg-flex align-items-center p-4 rounded shadow bg-white mb-4">
-                    <img src="{{ asset('images/company/lenovo-logo.png') }}" class="avatar avatar-medium p-4 rounded-pill shadow bg-white" alt="">
+                    <img src="{{ asset('images/company/circle-logo.png') }}" class="avatar avatar-medium p-4 rounded-pill shadow bg-white" alt="">
 
                     <div class="ms-lg-3 mt-3 mt-lg-0">
                         <h4>{{ $job->title }}</h4>
@@ -179,7 +179,7 @@
                         </ul>
                     </div>
                     <div class="d-flex align-items-center p-4 border-top">
-                        <img src="images/company/google-logo.png" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
+                        <img src="{{ asset('images/company/google-logo.png')}}" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
 
                         <div class="ms-3">
                             <a href="employer-profile.html" class="h5 company text-dark">Google</a>
@@ -202,7 +202,7 @@
                         </ul>
                     </div>
                     <div class="d-flex align-items-center p-4 border-top">
-                        <img src="images/company/whatsapp.png" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
+                        <img src="{{ asset('images/company/whatsapp.png')}}" class="avatar avatar-small rounded shadow p-3 bg-white" alt="">
 
                         <div class="ms-3">
                             <a href="employer-profile.html" class="h5 company text-dark">Whatsapp</a>

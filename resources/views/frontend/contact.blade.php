@@ -3,7 +3,7 @@
 @section('title','Contact')
 
 @section('content')
-<section class="bg-half-170 d-table w-100" style="background: url('images/hero/bg.jpg');">
+<section class="bg-half-170 d-table w-100" style="background: url('{{asset('images/hero/bg.jpg')}}');">
     <div class="bg-overlay bg-gradient-overlay"></div>
     <div class="container">
         <div class="row mt-5 justify-content-center">
@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="images/svg/contact.svg" class="img-fluid" alt="">
+                <img src="{{asset('images/svg/contact.svg')}}" class="img-fluid" alt="">
             </div>
             <div class="col-md-6">
                 <div class="p-4 rounded shadow ms-lg-5">

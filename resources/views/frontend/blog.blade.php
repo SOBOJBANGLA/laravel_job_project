@@ -3,7 +3,7 @@
 @section('title','Blog')
 
 @section('content')
-<section class="bg-half-170 d-table w-100" style="background: url('images/hero/bg.jpg');">
+<section class="bg-half-170 d-table w-100" style="background: url('{{asset('images/hero/bg.jpg')}}');">
     <div class="bg-overlay bg-gradient-overlay"></div>
     <div class="container">
         <div class="row mt-5 justify-content-center">
@@ -42,7 +42,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/01.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/01.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/02.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/02.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/03.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/03.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/04.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/04.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/05.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/05.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/06.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/06.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/07.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/07.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/08.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/08.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>
@@ -282,7 +282,7 @@
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-img blog-image position-relative overflow-hidden rounded-0">
                         <div class="position-relative overflow-hidden">
-                            <img src="images/blog/09.jpg" class="img-fluid" alt="">
+                            <img src="{{asset('images/blog/09.jpg')}}" class="img-fluid" alt="">
                             <div class="card-overlay"></div>
                         </div>
                     </div>

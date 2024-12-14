@@ -12,7 +12,7 @@
                         <div class="profile-banner relative text-transparent">
                             <input id="pro-banner" name="profile-banner" type="file" class="hidden" onchange="loadFile(event)" />
                             <div class="relative shrink-0">
-                                <img src="images/hero/bg5.jpg" class="rounded shadow" id="profile-banner" alt="">
+                                <img src="{{asset ('images/hero/bg5.jpg')}}" class="rounded shadow" id="profile-banner" alt="">
                                 <label class="profile-image-label" for="pro-banner"></label>
                             </div>
                         </div>
