@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2024 at 05:06 PM
+-- Generation Time: Dec 14, 2024 at 02:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,7 +77,10 @@ INSERT INTO `applicants` (`id`, `name`, `email`, `contact`, `cv`, `candidate_id`
 (8, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209141722.pdf', 1, 8, 15, 'pending', '2024-12-09 08:17:22', '2024-12-09 08:17:22'),
 (9, 'Hasib Ahmed', 'hasib@gmail.com', '012546789', 'images/20241209164810.pdf', 2, 7, 15, 'Pending Apply', '2024-12-09 10:48:10', '2024-12-09 23:15:19'),
 (10, 'Noman Abdullah', 'noman@gmail.com', '215455', 'images/20241209182037.pdf', 7, 6, 6, 'pending', '2024-12-09 12:20:37', '2024-12-09 12:20:37'),
-(11, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241211135643.pdf', 1, 13, 15, 'Apply Approved', '2024-12-11 07:56:43', '2024-12-11 07:58:24');
+(11, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241211135643.pdf', 1, 13, 15, 'Apply Approved', '2024-12-11 07:56:43', '2024-12-11 07:58:24'),
+(12, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241212135116.pdf', 1, 10, 15, 'Apply Pending', '2024-12-12 07:51:16', '2024-12-12 07:51:16'),
+(13, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241212135728.pdf', 1, 10, 15, 'Apply Pending', '2024-12-12 07:57:28', '2024-12-12 07:57:28'),
+(14, 'Kabir Ahmed', 'kabir@gmail.com', '01624632072', 'images/20241212141702.pdf', 4, 15, 15, 'Apply Pending', '2024-12-12 08:17:02', '2024-12-12 08:17:02');
 
 -- --------------------------------------------------------
 
@@ -162,6 +165,31 @@ INSERT INTO `companies` (`id`, `name`, `address`, `created_at`, `updated_at`) VA
 (5, 'Jakir Group', 'Chittagong', '2024-12-02 19:25:03', '2024-12-02 19:25:03'),
 (6, 'Taskin Group', 'Dhaka', '2024-12-02 19:32:00', '2024-12-02 19:32:00'),
 (7, 'Cumilla Mordern School', 'Cumilla', '2024-12-03 10:43:55', '2024-12-03 10:43:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `subject` varchar(20) NOT NULL,
+  `comment` varchar(100) NOT NULL,
+  `candidate_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `comment`, `candidate_id`, `created_at`, `updated_at`) VALUES
+(1, 'A.S.M ABDULLAH WAZI ULLAH', 'abuhmdabdullah72@gmail.com', 'job', 'gggggggg', 1, '2024-12-12 23:40:01', '2024-12-12 23:40:01'),
+(2, 'A.S.M ABDULLAH', 'abuhmdabdullah72@gmail.com', 'job', 'gggggggg', 1, '2024-12-13 00:03:33', '2024-12-13 00:03:33');
 
 -- --------------------------------------------------------
 
@@ -260,7 +288,8 @@ INSERT INTO `jobs` (`id`, `title`, `employeer_id`, `company_id`, `location_id`, 
 (11, 'Senior Developer', 15, 5, 2, 4, 4, 15, '25000', 'ffffffff', 'tttttttttt', 'eeeeeeeeee', 'qqqqqqqqqqq', 'fffffffffffff', '2', 'www.jakir.com', '2024-12-27 00:00:00', 1, 0, '2024-12-05 21:42:11', '2024-12-05 21:42:11'),
 (12, 'Senior Developer', 15, 5, 4, 4, 1, 2, '40000', 'fffffffffff', 'eeeeeeeeee', 'ttttttttt', 'wwwwwwwww', 'tyyyyyyyyy', '2', 'www.jakir.com', '2024-12-25 00:00:00', 1, 1, '2024-12-05 21:45:54', '2024-12-11 07:41:47'),
 (13, 'Teacher(English)', 15, 5, 2, 3, 1, 6, '21000', 'fffffffffff', 'gggggggggg', 'rrrrrrrrrrrrr', 'wwwwwwwwwwwwww', 'eeeeee', '2 Year', 'www.jakir.com', '2024-12-24 00:00:00', 1, 1, '2024-12-11 07:45:23', '2024-12-11 07:48:57'),
-(14, 'Junior operator', 15, 5, 1, 2, 1, 2, '12000', 'ggggg', 'ttt', 'yyyyyy', 'uuuuuuuu', 'rrrrrrrr', '2 Years', 'www.jakir.com', '2024-12-24 00:00:00', 0, 1, '2024-12-11 07:50:24', '2024-12-11 07:51:36');
+(14, 'Junior operator', 15, 5, 1, 2, 1, 2, '12000', 'ggggg', 'ttt', 'yyyyyy', 'uuuuuuuu', 'rrrrrrrr', '2 Years', 'www.jakir.com', '2024-12-24 00:00:00', 0, 1, '2024-12-11 07:50:24', '2024-12-11 07:51:36'),
+(15, 'Trainee Officer', 15, 5, 3, 2, 1, 2, '20000', 'dddddd', 'bbbbbb', 'rrrrrrrrr', 'qqqqqqqq', 'kkkkkkkkk', '0', 'www.jakir.com', '2024-12-24 00:00:00', 1, 1, '2024-12-12 08:10:49', '2024-12-12 08:15:28');
 
 -- --------------------------------------------------------
 
@@ -343,7 +372,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (33, '2024_12_07_115709_create_candidate_details_table', 8),
 (34, '2024_12_08_153941_create_applicants_table', 9),
 (35, '2024_12_10_041828_alter_applicants_table', 10),
-(36, '2024_12_11_131955_alter_jobs_table', 11);
+(36, '2024_12_11_131955_alter_jobs_table', 11),
+(37, '2024_12_13_045133_create_contacts_table', 12);
 
 -- --------------------------------------------------------
 
@@ -442,6 +472,12 @@ ALTER TABLE `companies`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `employeers`
 --
 ALTER TABLE `employeers`
@@ -514,7 +550,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `applicants`
 --
 ALTER TABLE `applicants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `candidate_details`
@@ -535,6 +571,12 @@ ALTER TABLE `companies`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `employeers`
 --
 ALTER TABLE `employeers`
@@ -550,7 +592,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `jobtypes`
@@ -568,7 +610,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

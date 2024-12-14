@@ -44,10 +44,12 @@
             <div class="col-md-6">
                 <div class="p-4 rounded shadow ms-lg-5">
                     <h4>Get in touch !</h4>
-                    <form class="mt-4" method="post" name="myForm" onsubmit="return validateForm()">
+                    <form class="mt-4" method="post" action="{{ route('contact') }}">
+                        @csrf
                         <p class="mb-0" id="error-msg"></p>
                         <div id="simple-msg"></div>
                         <div class="row">
+                            <input type="hidden" name="candidate_id" value="@if(Auth::check()) {{ Auth::user()->id }} @endif">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Your Name <span class="text-danger">*</span></label>
@@ -72,14 +74,18 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Comments <span class="text-danger">*</span></label>
-                                    <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Message :"></textarea>
+                                    <textarea name="comment" id="comments" rows="4" class="form-control" placeholder="Message :"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="d-grid">
+                                    @if(Auth::check())
                                     <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                    @else
+                                    <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                    @endif
                                 </div>
                             </div><!--end col-->
                         </div><!--end row-->

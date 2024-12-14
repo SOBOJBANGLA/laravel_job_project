@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Log In | Silva - Responsive Admin Dashboard Template</title>
+        <title>Log In | JobHub - Responsive Admin Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc."/>
         <meta name="author" content="Zoyothemes"/>
@@ -43,7 +43,7 @@
 
                                             <div class="auth-title-section mb-3 text-center"> 
                                                 <h3 class="text-dark fs-20 fw-medium mb-2">Welcome back</h3>
-                                                <p class="text-dark text-capitalize fs-14 mb-0">Sign in to continue to silve.</p>
+                                                <p class="text-dark text-capitalize fs-14 mb-0">Sign in to continue to JobHub.</p>
                                             </div>
 
                                             <div class="row">

@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\JobNotificationEmail;
 use App\Models\Applicant;
 use App\Models\Company;
+use App\Models\Contact;
+use App\Models\Employeer;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -25,7 +29,20 @@ class HomeController extends Controller
         return view('frontend.about');
     }
 
+    public function contact_form(Request $request){
+        return view('frontend.contact');
+    }
+
     public function contact(Request $request){
+
+        $contact=new Contact;
+        $contact->name=$request->name;
+        $contact->email=$request->email;
+        $contact->subject=$request->subject;
+        $contact->comment=$request->comment;
+        $contact->candidate_id=$request->candidate_id;
+        $contact->save();
+
        
         return view('frontend.contact');
     }
@@ -76,6 +93,21 @@ class HomeController extends Controller
          $applicant->job_id=$request->job_id;
          $applicant->employeer_id=$request->employeer_id;
          $applicant->save();
+
+         // Send Notification Email to Employer
+        
+
+        $job = Job::where('id', $request->job_id)->first(); 
+
+ $employer = Employeer::where('id', $job->employeer_id)->first(); 
+
+$mailData = [
+'employer' => $employer, 
+'user' => Auth::user(), 
+'job' => $job, 
+];
+
+        Mail::to('yasinrobiul336@gmail.com')->send(new JobNotificationEmail($mailData));
         //return redirect('admin/specialist');
         return redirect()->back()->with('msg',"Successfully Apply");
 
