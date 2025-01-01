@@ -267,7 +267,7 @@
                                                 </div>
 
                                                 <div class="card-body mb-0">
-                                                    <form method="post" action="{{route('employeer.profile.store')}}" >
+                                                    <form method="post" action="" >
                                                         @csrf
                                                     <div class="form-group mb-3 row">
                                                         <label class="form-label">Old Password</label>

@@ -139,7 +139,7 @@ Route::middleware('guest:employeer')->prefix('employeer')->group( function () {
 Route::middleware('auth:employeer')->prefix('employeer')->group( function () {
     Route::get('/profile', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofile'])->name('employeer.profile');
     Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'employeerprofilestore'])->name('employeer.profile.store');
-    Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'changepasswordstore'])->name('employeer.profile.store');
+    // Route::post('/profile/store', [App\Http\Controllers\Auth\Employeer\ProfileController::class, 'changepasswordstore'])->name('employeer.profile.store');
     Route::resource('/vacancy',VacancyController::class);
     Route::get('/view_apply/{jobId}/applicant', [AdminController::class, 'employeeViewApplicant'])->name('view.applicant');
     Route::post('/view_apply/{applicantId}/update-status', [AdminController::class, 'updateApplicantStatus'])->name('employee.updateApplicantStatus');
