@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2024 at 02:54 AM
+-- Generation Time: Jan 01, 2025 at 12:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -70,17 +70,51 @@ CREATE TABLE `applicants` (
 
 INSERT INTO `applicants` (`id`, `name`, `email`, `contact`, `cv`, `candidate_id`, `job_id`, `employeer_id`, `status`, `created_at`, `updated_at`) VALUES
 (3, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209014756.pdf', 1, 11, 15, 'Apply Decline', '2024-12-08 19:47:56', '2024-12-09 23:57:13'),
-(4, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209122903.pdf', 5, 7, 15, 'Apply Approved', '2024-12-09 06:29:03', '2024-12-09 23:42:48'),
+(4, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209122903.pdf', 5, 7, 15, 'Apply Decline', '2024-12-09 06:29:03', '2025-01-01 05:10:21'),
 (5, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209124449.pdf', 5, 12, 15, 'pending', '2024-12-09 06:44:49', '2024-12-09 06:44:49'),
 (6, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209125104.pdf', 5, 9, 9, 'pending', '2024-12-09 06:51:04', '2024-12-09 06:51:04'),
 (7, 'A.S.M Abdullah', 'mamun@gmail.com', '1234567895', 'images/20241209141600.pdf', 5, 10, 15, 'Apply Approved', '2024-12-09 08:16:00', '2024-12-09 23:59:22'),
-(8, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209141722.pdf', 1, 8, 15, 'pending', '2024-12-09 08:17:22', '2024-12-09 08:17:22'),
+(8, 'MD.ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241209141722.pdf', 1, 8, 15, 'Apply Decline', '2024-12-09 08:17:22', '2025-01-01 05:06:14'),
 (9, 'Hasib Ahmed', 'hasib@gmail.com', '012546789', 'images/20241209164810.pdf', 2, 7, 15, 'Pending Apply', '2024-12-09 10:48:10', '2024-12-09 23:15:19'),
 (10, 'Noman Abdullah', 'noman@gmail.com', '215455', 'images/20241209182037.pdf', 7, 6, 6, 'pending', '2024-12-09 12:20:37', '2024-12-09 12:20:37'),
 (11, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241211135643.pdf', 1, 13, 15, 'Apply Approved', '2024-12-11 07:56:43', '2024-12-11 07:58:24'),
 (12, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241212135116.pdf', 1, 10, 15, 'Apply Pending', '2024-12-12 07:51:16', '2024-12-12 07:51:16'),
 (13, 'A.S.M Abdullah', 'abuhmdabdullah72@gmail.com', '1234567895', 'images/20241212135728.pdf', 1, 10, 15, 'Apply Pending', '2024-12-12 07:57:28', '2024-12-12 07:57:28'),
-(14, 'Kabir Ahmed', 'kabir@gmail.com', '01624632072', 'images/20241212141702.pdf', 4, 15, 15, 'Apply Pending', '2024-12-12 08:17:02', '2024-12-12 08:17:02');
+(14, 'Kabir Ahmed', 'kabir@gmail.com', '01624632072', 'images/20241212141702.pdf', 4, 15, 15, 'Apply Pending', '2024-12-12 08:17:02', '2024-12-12 08:17:02'),
+(16, 'Sajid', 'sazid@gmail.com', '012345678', 'images/20241220121810.pdf', 8, 14, 15, 'Apply Approved', '2024-12-20 06:18:10', '2024-12-20 08:32:38'),
+(17, 'Abdul Hamid', 'sazid@gmail.com', '012345678', 'images/20241220142526.pdf', 8, 15, 15, 'Apply Pending', '2024-12-20 08:25:26', '2024-12-20 08:25:26'),
+(18, 'Abdul Hamid', 'sazid@gmail.com', '215455', 'images/20241220143455.pdf', 8, 13, 15, 'Apply Pending', '2024-12-20 08:34:55', '2024-12-20 08:34:55'),
+(23, 'A.S.M ABDULLAH', 'abuhmdabdullah72@gmail.com', '01624632072', 'images/20241221014051.pdf', 8, 9, 9, 'Apply Pending', '2024-12-20 19:40:51', '2024-12-20 19:40:51'),
+(24, 'Sijid Khan', 'sazid@gmail.com', '215455564', 'images/20241221015036.pdf', 8, 16, 15, 'Apply Approved', '2024-12-20 19:50:36', '2024-12-20 19:52:13'),
+(25, 'Wasim Khan', 'wasim@gmail.com', '012345678', 'images/20241221153525.pdf', 9, 17, 15, 'Apply Approved', '2024-12-21 09:35:25', '2024-12-21 09:37:18'),
+(26, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222125530.pdf', 10, 15, 15, 'Apply Pending', '2024-12-22 06:55:30', '2024-12-22 06:55:30'),
+(27, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222131429.pdf', 10, 16, 15, 'Apply Pending', '2024-12-22 07:14:29', '2024-12-22 07:14:29'),
+(28, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222132355.pdf', 10, 14, 15, 'Apply Pending', '2024-12-22 07:23:55', '2024-12-22 07:23:55'),
+(29, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222133342.pdf', 10, 13, 15, 'Apply Pending', '2024-12-22 07:33:42', '2024-12-22 07:33:42'),
+(30, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222133558.pdf', 10, 17, 15, 'Apply Pending', '2024-12-22 07:35:58', '2024-12-22 07:35:58'),
+(31, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222134538.pdf', 10, 9, 9, 'Apply Pending', '2024-12-22 07:45:38', '2024-12-22 07:45:38'),
+(32, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222135506.pdf', 10, 10, 15, 'Apply Pending', '2024-12-22 07:55:06', '2024-12-22 07:55:06'),
+(33, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222135909.pdf', 10, 7, 15, 'Apply Decline', '2024-12-22 07:59:09', '2024-12-22 08:00:33'),
+(34, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222154750.pdf', 10, 6, 6, 'Apply Pending', '2024-12-22 09:47:50', '2024-12-22 09:47:50'),
+(35, 'Tabriz Khan', 'tabriz@gmail.com', '215455', 'images/20241222154942.pdf', 10, 1, 3, 'Apply Pending', '2024-12-22 09:49:42', '2024-12-22 09:49:42'),
+(36, 'Galib', 'galib@gmail.com', '215455', 'images/20241223134605.pdf', 11, 15, 15, 'Apply Pending', '2024-12-23 07:46:05', '2024-12-23 07:46:05'),
+(37, 'Galib', 'galib@gmail.com', '215455', 'images/20241223134651.pdf', 11, 17, 15, 'Apply Pending', '2024-12-23 07:46:51', '2024-12-23 07:46:51'),
+(38, 'Galib', 'galib@gmail.com', '215455', 'images/20241223135009.pdf', 11, 16, 15, 'Apply Pending', '2024-12-23 07:50:09', '2024-12-23 07:50:09'),
+(39, 'Galib', 'galib@gmail.com', '215455', 'images/20241223135341.pdf', 11, 14, 15, 'Apply Pending', '2024-12-23 07:53:41', '2024-12-23 07:53:41'),
+(40, 'Galib', 'galib@gmail.com', '215455', 'images/20241223135613.pdf', 11, 12, 15, 'Apply Pending', '2024-12-23 07:56:13', '2024-12-23 07:56:13'),
+(41, 'Galib', 'galib@gmail.com', '215455', 'images/20241223135808.pdf', 11, 13, 15, 'Apply Pending', '2024-12-23 07:58:08', '2024-12-23 07:58:08'),
+(42, 'Galib', 'galib@gmail.com', '215455', 'images/20241223140110.pdf', 11, 9, 9, 'Apply Pending', '2024-12-23 08:01:10', '2024-12-23 08:01:10'),
+(43, 'Galib', 'galib@gmail.com', '215455', 'images/20241223140420.pdf', 11, 7, 15, 'Apply Approved', '2024-12-23 08:04:20', '2024-12-23 08:07:14'),
+(44, 'Galib', 'galib@gmail.com', '215455', 'images/20241223140453.pdf', 11, 8, 15, 'Apply Pending', '2024-12-23 08:04:53', '2024-12-23 08:04:53'),
+(45, 'Galib', 'galib@gmail.com', '215455', 'images/20241223141005.pdf', 11, 4, 18, 'Apply Pending', '2024-12-23 08:10:05', '2024-12-23 08:10:05'),
+(46, 'Galib', 'galib@gmail.com', '215455', 'images/20241223141558.pdf', 11, 6, 6, 'Apply Pending', '2024-12-23 08:15:58', '2024-12-23 08:15:58'),
+(47, 'Noman Abdullah', 'asm@gmail.com', '215455', 'images/20241223142019.pdf', 7, 17, 15, 'Apply Pending', '2024-12-23 08:20:19', '2024-12-23 08:20:19'),
+(48, 'Noman Abdullah', 'asm@gmail.com', '215455', 'images/20241223142100.pdf', 7, 16, 15, 'Apply Pending', '2024-12-23 08:21:00', '2024-12-23 08:21:00'),
+(49, 'Noman Abdullah', 'asm@gmail.com', '215455', 'images/20241223143753.pdf', 7, 14, 15, 'Apply Pending', '2024-12-23 08:37:53', '2024-12-23 08:37:53'),
+(50, 'Noman Abdullah', 'asm@gmail.com', '215455', 'images/20241223145153.pdf', 7, 18, 19, 'Apply Approved', '2024-12-23 08:51:53', '2024-12-23 08:52:36'),
+(51, 'Noman Abdullah', 'asm@gmail.com', '215455', 'images/20241228132855.pdf', 1, 18, 19, 'Apply Pending', '2024-12-28 07:28:55', '2024-12-28 07:28:55'),
+(52, 'Saim Ahmed', 'saim@gmail.com', '01234567899', 'images/20241228143937.pdf', 12, 19, 20, 'Apply Approved', '2024-12-28 08:39:37', '2024-12-28 08:40:10'),
+(53, 'Sazzad Hossain', 'sazzad@gmail.com', '2000000', 'images/20241229162550.pdf', 13, 20, 21, 'Apply Approved', '2024-12-29 10:25:50', '2024-12-29 10:26:43');
 
 -- --------------------------------------------------------
 
@@ -114,8 +148,14 @@ INSERT INTO `candidate_details` (`id`, `f_name`, `l_name`, `occupation`, `phone`
 (12, 'Kabir', 'Ahmed', 'WD', '01624632072', 'jjjjjjjjjjjjjjjjj', 'llllllllllllllllllllllll', 'images/20241207180024.jpg', 'images/20241207180024.pdf', 4, 1, '2024-12-07 12:00:24', '2024-12-07 12:00:24'),
 (13, 'Masud', 'Kamal', 'WD', '02154699777', 'ggggggggggggg', 'ddddddddddddddrr', 'images/20241208121154.jpg', 'documents/20241208121154.pdf', 5, 1, '2024-12-07 12:28:50', '2024-12-08 06:11:54'),
 (14, 'Kawsar', 'Ahmed', 'WD', '012345678', 'ggggggggggggg', 'hhhhhhhhhhhh', 'images/20241208115701.jpg', 'documents/20241208115701.pdf', 6, 1, '2024-12-08 05:21:06', '2024-12-08 05:57:01'),
-(15, 'Abu Saleh', 'Abdullah', 'WD', '2154699777', 'aaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbb', 'images/20241208125518.jpg', 'documents/20241208125518.pdf', 1, 1, '2024-12-08 06:54:44', '2024-12-08 06:55:18'),
-(16, 'Noman', 'Abdullah', 'WD', '01234567897', 'Basabo,Dhaka', 'gggggggggg', 'images/20241208125946.jpg', 'images/20241208125923.pdf', 7, 1, '2024-12-08 06:59:23', '2024-12-08 06:59:46');
+(15, 'Abu Saleh', 'Abdullah', 'WD', '2154699777', 'aaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbb', 'images/20241221123740.jpg', 'documents/20241221123740.pdf', 1, 1, '2024-12-08 06:54:44', '2024-12-21 06:37:40'),
+(16, 'Noman', 'Abdullah', 'WD', '01234567897', 'Basabo,Dhaka', 'gggggggggg', 'images/20241208125946.jpg', 'images/20241208125923.pdf', 7, 1, '2024-12-08 06:59:23', '2024-12-08 06:59:46'),
+(17, 'MD.', 'Sazid', 'WD', '01639008885', 'Khilgaon', 'hhhh', 'images/20241220033606.jpg', 'images/20241220033606.pdf', 8, 1, '2024-12-19 21:36:06', '2024-12-19 21:36:06'),
+(18, 'Md', 'Wasim', 'WD', '012456698', 'ffffffff', 'eeeeeee', 'images/20241221152846.jpg', 'images/20241221152846.pdf', 9, 1, '2024-12-21 09:28:46', '2024-12-21 09:28:46'),
+(19, 'Tabriz', 'Khan', 'WD', '01234567897', 'Khulna', 'rrrrr', 'images/20241222123933.jpg', 'images/20241222123933.pdf', 10, 1, '2024-12-22 06:39:33', '2024-12-22 06:39:33'),
+(20, 'Galib', 'Khan', 'WD', '01234567897', 'Barishal', 'lkjiuou', 'images/20241223132633.jpg', 'images/20241223132633.pdf', 11, 1, '2024-12-23 07:26:33', '2024-12-23 07:26:33'),
+(21, 'Saim', 'Ahmed', 'WD', '01234567899', 'Dhaka', 'i am good', 'images/20241228143033.jpg', 'images/20241228143033.pdf', 12, 1, '2024-12-28 08:30:33', '2024-12-28 08:30:33'),
+(22, 'MD.', 'Sazzad', 'WD', '2000000', 'Dhaka', 'fffffffff', 'images/20241229161626.jpg', 'images/20241229161626.pdf', 13, 1, '2024-12-29 10:16:26', '2024-12-29 10:16:26');
 
 -- --------------------------------------------------------
 
@@ -138,7 +178,10 @@ INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VAL
 (1, 'Accounting', '2024-12-01 05:04:01', '2024-12-01 05:04:01'),
 (2, 'Banking', '2024-12-01 05:04:17', '2024-12-01 05:04:17'),
 (3, 'Teaching', '2024-12-03 10:44:23', '2024-12-03 10:44:23'),
-(4, 'Web Development', '2024-12-05 21:35:34', '2024-12-05 21:35:34');
+(4, 'Web Development', '2024-12-05 21:35:34', '2024-12-05 21:35:34'),
+(5, 'Electronics Engineering', '2024-12-23 08:43:04', '2024-12-23 08:43:04'),
+(6, 'Agro Farm', '2024-12-28 08:32:45', '2024-12-28 08:32:45'),
+(8, 'Germents', '2024-12-29 10:22:16', '2024-12-29 10:22:16');
 
 -- --------------------------------------------------------
 
@@ -164,7 +207,10 @@ INSERT INTO `companies` (`id`, `name`, `address`, `created_at`, `updated_at`) VA
 (4, 'Hashim Group', 'Savar,Dhaka', '2024-12-02 05:05:16', '2024-12-02 05:05:16'),
 (5, 'Jakir Group', 'Chittagong', '2024-12-02 19:25:03', '2024-12-02 19:25:03'),
 (6, 'Taskin Group', 'Dhaka', '2024-12-02 19:32:00', '2024-12-02 19:32:00'),
-(7, 'Cumilla Mordern School', 'Cumilla', '2024-12-03 10:43:55', '2024-12-03 10:43:55');
+(7, 'Cumilla Mordern School', 'Cumilla', '2024-12-03 10:43:55', '2024-12-03 10:43:55'),
+(8, 'Walton Ltd', 'Gazipur', '2024-12-23 08:41:26', '2024-12-23 08:41:26'),
+(9, 'Anis Ltd', 'Sylhet', '2024-12-28 08:32:09', '2024-12-28 08:32:09'),
+(10, 'Mohammadia group', 'Savar,Dhaka', '2024-12-29 10:17:47', '2024-12-29 10:17:47');
 
 -- --------------------------------------------------------
 
@@ -189,7 +235,8 @@ CREATE TABLE `contacts` (
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `comment`, `candidate_id`, `created_at`, `updated_at`) VALUES
 (1, 'A.S.M ABDULLAH WAZI ULLAH', 'abuhmdabdullah72@gmail.com', 'job', 'gggggggg', 1, '2024-12-12 23:40:01', '2024-12-12 23:40:01'),
-(2, 'A.S.M ABDULLAH', 'abuhmdabdullah72@gmail.com', 'job', 'gggggggg', 1, '2024-12-13 00:03:33', '2024-12-13 00:03:33');
+(2, 'A.S.M ABDULLAH', 'abuhmdabdullah72@gmail.com', 'job', 'gggggggg', 1, '2024-12-13 00:03:33', '2024-12-13 00:03:33'),
+(3, 'Samir', 'samir@gmail.com', 'job', 'ssss', 1, '2024-12-14 09:52:28', '2024-12-14 09:52:28');
 
 -- --------------------------------------------------------
 
@@ -222,10 +269,13 @@ INSERT INTO `employeers` (`id`, `name`, `company_id`, `email`, `password`, `phot
 (9, 'Hashim', 4, 'hashim@gmail.com', '$2y$10$xnlOFRfifhREWIf4gkD41OMeFO8CmDVcqgMTzw9p/niQM0KzEL0bq', 'images/20241202110642.jpg', 3, 'hhhhhhhhhhhhhhhh', NULL, 'active', '2024-12-02 05:06:43', '2024-12-02 05:06:43'),
 (11, 'Habibb', 2, 'habib@gmail.com', '$2y$10$QMmbflpSgWoargpn4N4Rv.JpwEYjVMsuLsX3S83VavR8fMYx.kKJi', 'images/20241202141305.jpg', 1, 'fffffffffff', NULL, 'active', '2024-12-02 08:12:24', '2024-12-02 08:13:05'),
 (12, 'Babul', 2, 'babul@gmail.com', '$2y$10$PTsVWul897h3SOsFAgYamOzHfxiMYJvs1aqE7ATD5P/GOds7blyEO', 'images/20241202141744.jpg', 1, 'fffffffffff', NULL, 'active', '2024-12-02 08:15:17', '2024-12-02 08:17:44'),
-(15, 'Jakir Khan', 5, 'jakir@gmail.com', '$2y$10$JVU2yJMieGdefMI2s96N.eZFE4C/Un5BGLH4aENS6zQkdlAIxE4vK', 'images/20241203012629.jpg', 4, 'jjjjjjjjjjjjjjj', NULL, 'active', '2024-12-02 19:26:29', '2024-12-02 19:26:29'),
+(15, 'Jakir Khan', 5, 'jakir@gmail.com', '$2y$10$JVU2yJMieGdefMI2s96N.eZFE4C/Un5BGLH4aENS6zQkdlAIxE4vK', 'images/20250101110414.jpg', 2, 'jjjjjjjjjjjjjjj', NULL, NULL, '2024-12-02 19:26:29', '2025-01-01 05:04:14'),
 (16, 'Taskin Ahmed', 6, 'taskin@gmail.com', '$2y$10$OxcHhK0/yO3iIlzRbtCLRevSTAxEiTmBRYo.rIfV2Y3BD6eCZMP36', 'images/20241203013346.jpg', 1, 'tttttttttttttttttttttttttttttttttt', NULL, NULL, '2024-12-02 19:32:43', '2024-12-02 19:33:46'),
 (17, 'Kabir', 2, 'kabir@gmail.com', '$2y$10$gLz3EHaDVnXueteLqKQV2OsjSY0vw0xcMbA0TSVb/qpB9Xlj1eKey', 'images/20241203103947.jpg', 2, 'kkkkkkkkkkkk', NULL, 'active', '2024-12-03 04:39:47', '2024-12-03 04:39:47'),
-(18, 'Abdullah', 4, 'asm@gmail.com', '$2y$10$JumaMGsztQvTm6Xqbu4RO.u0.yShtgXwGz0FHtrAQMTwSvDCoHCEK', 'images/20241203122343.jpg', 2, 'assddddddddddd', NULL, NULL, '2024-12-03 04:43:04', '2024-12-03 06:23:43');
+(18, 'Abdullah', 4, 'asm@gmail.com', '$2y$10$JumaMGsztQvTm6Xqbu4RO.u0.yShtgXwGz0FHtrAQMTwSvDCoHCEK', 'images/20241203122343.jpg', 2, 'assddddddddddd', NULL, NULL, '2024-12-03 04:43:04', '2024-12-03 06:23:43'),
+(19, 'Md. Mohshin', 8, 'mohsin@gmail.com', '$2y$10$jAHDPMR54tm.mP6WrNMPA.EE8J6EtrLOV2Lc1Wi8xVZYUBWUKruku', 'images/20241223144709.png', 6, 'gggg', NULL, NULL, '2024-12-23 08:45:47', '2024-12-23 08:47:09'),
+(20, 'anis', 9, 'anis@gmail.com', '$2y$10$iFGGy/vELPjt8DBx65qN1O2b7P2/4nmnqLM7LlMWVsBdZjLXPmpne', 'images/20241228143638.jpg', 7, 'ggggggggg', NULL, NULL, '2024-12-28 08:34:05', '2024-12-28 08:36:38'),
+(21, 'Yasin', 10, 'yasin@gmail.com', '$2y$10$4/.jbEr7kwXeEAoOG3HqrOTEt0Re7SeJZrKloes0loHfAIPynS6KS', 'images/20241229162057.jpg', 8, 'ggggggggggg', NULL, NULL, '2024-12-29 10:20:06', '2024-12-29 10:20:57');
 
 -- --------------------------------------------------------
 
@@ -289,7 +339,12 @@ INSERT INTO `jobs` (`id`, `title`, `employeer_id`, `company_id`, `location_id`, 
 (12, 'Senior Developer', 15, 5, 4, 4, 1, 2, '40000', 'fffffffffff', 'eeeeeeeeee', 'ttttttttt', 'wwwwwwwww', 'tyyyyyyyyy', '2', 'www.jakir.com', '2024-12-25 00:00:00', 1, 1, '2024-12-05 21:45:54', '2024-12-11 07:41:47'),
 (13, 'Teacher(English)', 15, 5, 2, 3, 1, 6, '21000', 'fffffffffff', 'gggggggggg', 'rrrrrrrrrrrrr', 'wwwwwwwwwwwwww', 'eeeeee', '2 Year', 'www.jakir.com', '2024-12-24 00:00:00', 1, 1, '2024-12-11 07:45:23', '2024-12-11 07:48:57'),
 (14, 'Junior operator', 15, 5, 1, 2, 1, 2, '12000', 'ggggg', 'ttt', 'yyyyyy', 'uuuuuuuu', 'rrrrrrrr', '2 Years', 'www.jakir.com', '2024-12-24 00:00:00', 0, 1, '2024-12-11 07:50:24', '2024-12-11 07:51:36'),
-(15, 'Trainee Officer', 15, 5, 3, 2, 1, 2, '20000', 'dddddd', 'bbbbbb', 'rrrrrrrrr', 'qqqqqqqq', 'kkkkkkkkk', '0', 'www.jakir.com', '2024-12-24 00:00:00', 1, 1, '2024-12-12 08:10:49', '2024-12-12 08:15:28');
+(15, 'Trainee Officer', 15, 5, 3, 2, 1, 2, '20000', 'dddddd', 'bbbbbb', 'rrrrrrrrr', 'qqqqqqqq', 'kkkkkkkkk', '0', 'www.jakir.com', '2024-12-31 00:00:00', 0, 1, '2024-12-12 08:10:49', '2024-12-23 08:50:41'),
+(16, 'Driver', 15, 5, 1, 2, 1, 2, '10000', 'fffffff', 'eeeeeeee', 'rrrrrrrrrrr', 'qqqqqqqqqq', 'hhhhhhhhh', '2 Year', 'www.jakir.com', '2024-12-25 00:00:00', 1, 0, '2024-12-20 19:48:25', '2024-12-20 19:48:25'),
+(17, 'Quality Officer', 15, 5, 1, 1, 1, 5, '20000', 'dddddddddd', 'bbbbbbbbb', 'rrrrrrrrrr', 'qqqqqqqq', 'kkkkkkkkk', '2 Years', 'www.jakir.com', '2024-12-27 00:00:00', 1, 1, '2024-12-21 09:32:00', '2024-12-21 09:33:24'),
+(18, 'Senior Engineer(Electronics)', 19, 8, 6, 5, 1, 2, '30000', 'dddddd', 'bbbbbbbb', 'ttttttttt', 'eeeeeeee', 'iiiiiiiii', '2 Year', 'www.walton.com', '2024-12-24 00:00:00', 1, 0, '2024-12-23 08:49:27', '2024-12-28 08:41:11'),
+(19, 'Assistant officer', 20, 9, 7, 6, 1, 2, '20000', 'dddddddddd', 'bbbbbbbbbb', 'rrrrrrrrrrr', 'eeeeee', 'jjjjjjjjjjj', '2 Years', 'www.anis.com', '2025-01-03 00:00:00', 1, 1, '2024-12-28 08:38:55', '2024-12-28 08:41:52'),
+(20, 'Swing Operator', 21, 10, 3, 8, 1, 10, '10000', 'ddddddd', 'bbbbbb', 'rrrrr', 'qqqqqqqqqq', 'kkkkkkkk', '2 Year', 'www.yasin.com', '2025-01-21 00:00:00', 1, 0, '2024-12-29 10:23:32', '2025-01-01 05:11:21');
 
 -- --------------------------------------------------------
 
@@ -336,7 +391,10 @@ INSERT INTO `locations` (`id`, `location_name`, `created_at`, `updated_at`) VALU
 (2, 'Cumilla', '2024-12-01 05:05:47', '2024-12-01 05:05:47'),
 (3, 'Savar,Dhaka', '2024-12-02 05:05:40', '2024-12-02 05:05:40'),
 (4, 'Chittagong', '2024-12-02 19:25:30', '2024-12-02 19:25:30'),
-(5, 'Noakhali', '2024-12-03 10:44:40', '2024-12-03 10:44:40');
+(5, 'Noakhali', '2024-12-03 10:44:40', '2024-12-03 10:44:40'),
+(6, 'Gazipur', '2024-12-23 08:45:17', '2024-12-23 08:45:17'),
+(7, 'Sylhet', '2024-12-28 08:33:07', '2024-12-28 08:33:07'),
+(8, 'Bhola', '2024-12-29 10:18:44', '2024-12-29 10:18:44');
 
 -- --------------------------------------------------------
 
@@ -434,7 +492,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (4, 'Kabir', 'kabir@gmail.com', NULL, '$2y$10$Rr7d9hjE/ECK7SnLq9HZ6ei2MpUTwkaNrm7Louc1eqPpN1tXnduw2', NULL, '2024-12-07 11:56:06', '2024-12-07 11:56:06'),
 (5, 'Masud Kamal', 'mamun@gmail.com', NULL, '$2y$10$plOZTKQCkbC5c0y4SWcmSeIzYsgEMTqoKuDO8NsvVg/EuuZNaTl0K', NULL, '2024-12-07 12:26:24', '2024-12-07 12:26:24'),
 (6, 'Kawsar', 'kawsar@gmail.com', NULL, '$2y$10$s97h2g0Y51t6unZELgOO5.G/fYx4qwomxzviKZgd/bpmvv7vOWizm', NULL, '2024-12-08 05:19:20', '2024-12-08 05:19:20'),
-(7, 'Noman', 'noman@gmail.com', NULL, '$2y$10$/T0NmUkwt5.j/yNjguVmMuEsXDY/sFLniZBdVOP/uYrkpxZmVeVZS', NULL, '2024-12-08 06:57:52', '2024-12-08 06:57:52');
+(7, 'Noman', 'noman@gmail.com', NULL, '$2y$10$/T0NmUkwt5.j/yNjguVmMuEsXDY/sFLniZBdVOP/uYrkpxZmVeVZS', NULL, '2024-12-08 06:57:52', '2024-12-08 06:57:52'),
+(8, 'Sazid', 'sazid@gmail.com', NULL, '$2y$10$ZQuRdaWBUcRj.wvjcKILP.B8tsA0AZzI6Hf0Tq4KWJt4BGx8yCQh2', NULL, '2024-12-19 20:33:00', '2024-12-19 20:33:00'),
+(9, 'Wasim', 'wasim@gmail.com', NULL, '$2y$10$u7KKOkyDJBUJcXcsR9r7V.ltH.dvcO2yl2ryYEyEAo7uKuD71ZEvi', NULL, '2024-12-21 09:24:28', '2024-12-21 09:24:28'),
+(10, 'Tabriz Khan', 'tabriz@gmail.com', NULL, '$2y$10$oom39JZMW85ly01KuI1XCOQaPoU.sbQj5ovtR7d8I6vvIOHuzi9ei', NULL, '2024-12-22 06:37:04', '2024-12-22 06:37:04'),
+(11, 'Galib', 'galib@gmail.com', NULL, '$2y$10$.VdjPLU3vLkV79mliwZbfuaqE0b75JA2lEcOGPOJp5Bcg/Mi2EU72', NULL, '2024-12-23 07:25:11', '2024-12-23 07:25:11'),
+(12, 'Saim Ahmed', 'saim@gmail.com', NULL, '$2y$10$68wPHAGheiDvkR35PzCvjeoqM.KkPHdvmxOgKj1JcPuPQHnkAWgje', NULL, '2024-12-28 08:29:14', '2024-12-28 08:29:14'),
+(13, 'Sazzad', 'sazzad@gmail.com', NULL, '$2y$10$294AiOiPLSTeTGJD197HFeI7NCvBlVkoMPlvcri0Mrdj.WgS3KC4G', NULL, '2024-12-29 10:14:07', '2024-12-29 10:14:07');
 
 --
 -- Indexes for dumped tables
@@ -550,37 +614,37 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `applicants`
 --
 ALTER TABLE `applicants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `candidate_details`
 --
 ALTER TABLE `candidate_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `employeers`
 --
 ALTER TABLE `employeers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -592,7 +656,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `jobtypes`
@@ -604,7 +668,7 @@ ALTER TABLE `jobtypes`
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -622,7 +686,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
